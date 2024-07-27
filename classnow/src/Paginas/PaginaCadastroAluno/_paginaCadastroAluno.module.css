@@ -1,0 +1,137 @@
+.corpo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(189, 189, 189,0.9);
+}
+
+.blocoLogin {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40rem;
+    height: 100%;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    height: 70%;
+}
+
+.dadoSenha {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    border-radius: 25px;
+    padding: 0.6rem;
+    margin-bottom: 7%;
+    border: none;
+    outline: none;
+    color: white;
+    background-color: #ffffff;
+    transition: .4s;
+}
+
+.dadoSenha:hover {
+    transform: scale(1.03);
+    transition: .4s;
+    border: 1px solid black;
+    box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 10px 1px;
+}
+
+.blocoTextoSenha{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 40%;
+    width: 100%;
+  }
+
+.texto {
+    border: none;
+    outline: none;
+    width: 100%;
+    color: #000000;
+}
+
+.titulo {
+    font-family: 'Inter', sans-serif;
+    margin-top: 4%;
+    margin-bottom: 4%;
+}
+
+.senhas{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 20%;
+}
+
+.senhaSistema{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 5%;
+    height: 100%;
+}
+
+.dado {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
+    width: 100%;
+    border-radius: 25px;
+    padding: 0.6rem;
+    margin-bottom: 7%;
+    border: none;
+    outline: none;
+    color: white;
+    background-color: #ffffff;
+    transition: .4s;
+}
+
+.dado:hover {
+    transform: scale(1.03);
+    transition: .4s;
+    border: 1px solid black;
+    box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 10px 1px;
+}
+
+.blocoTexto{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 9%;
+    width: 100%;
+  }
+
+.botoes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 5%;
+    margin-top: 8%;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('../../Inter/Inter-VariableFont_slnt\,wght.ttf') format('truetype');
+
+}

@@ -1,0 +1,21 @@
+.corpo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-between;
+    flex-direction: row;
+    width:25rem;
+}
+
+.imagem{
+    display: flex;
+    align-items: left;
+    justify-content: center;
+    width: 110%;
+
+}
+
+.nome{
+    width: auto;
+    height: 100%;
+}
