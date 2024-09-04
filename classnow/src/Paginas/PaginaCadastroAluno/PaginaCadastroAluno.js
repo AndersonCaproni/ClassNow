@@ -5,6 +5,7 @@ import aluno from '../../Servicos/aluno'
 import styles from './_paginaCadastroAluno.module.css'
 import { useNavigate } from 'react-router-dom'
 import { useAlert } from '../../Uteis/useAlert'
+import ReactInputMask from 'react-input-mask'
 
 function PaginaCadastroAluno() {
     const navigate = useNavigate();
@@ -41,19 +42,19 @@ function PaginaCadastroAluno() {
                     <label className={styles.titulo}>Nome:</label>
                     <div className={styles.blocoTexto}>
                         <div className={styles.dado}>
-                            <input placeholder="nome" className={styles.texto} type="text" value={nome} onChange={(x) => { setNome(x.target.value); }} />
+                            <ReactInputMask placeholder="nome" className={styles.texto} type="text" value={nome} onChange={(x) => { setNome(x.target.value); }} />
                         </div>
                     </div>
                     <label className={styles.titulo}>E-mail:</label>
                     <div className={styles.blocoTexto}>
                         <div className={styles.dado}>
-                            <input placeholder="e-mail" className={styles.texto} type="text" value={email} onChange={(x) => { setEmail(x.target.value); }} />
+                            <ReactInputMask placeholder="e-mail" className={styles.texto} type="text" value={email} onChange={(x) => { setEmail(x.target.value); }} />
                         </div>
                     </div>
                     <label className={styles.titulo}>Telefone:</label>
                     <div className={styles.blocoTexto}>
                         <div className={styles.dado}>
-                            <input placeholder="telefone" className={styles.texto} type="text" value={telefone} onChange={(x) => { setTelefone(x.target.value); }} />
+                            <ReactInputMask maskChar={null} mask="(99) 99999-9999" placeholder="telefone" className={styles.texto} type="text" value={telefone} onChange={(x) => { setTelefone(x.target.value); }} />
                         </div>
                     </div>
                     <div className={styles.senhas}>
@@ -61,7 +62,7 @@ function PaginaCadastroAluno() {
                             <label className={styles.titulo}>Senha:</label>
                             <div className={styles.blocoTextoSenha}>
                                 <div className={styles.dadoSenha}>
-                                    <input placeholder="senha" className={styles.texto} type="password" value={senha} onChange={(x) => { setSenha(x.target.value); }} />
+                                    <ReactInputMask placeholder="senha" className={styles.texto} type="password" value={senha} onChange={(x) => { setSenha(x.target.value); }} />
                                 </div>
                             </div>
                         </div>
@@ -69,7 +70,7 @@ function PaginaCadastroAluno() {
                             <label className={styles.titulo}>Confirmar Senha:</label>
                             <div className={styles.blocoTextoSenha}>
                                 <div className={styles.dadoSenha}>
-                                    <input placeholder="confirmar senha" className={styles.texto} type="password" value={confirmarSenha} onChange={(x) => { setConfirmarSenha(x.target.value); }} />
+                                    <ReactInputMask placeholder="confirmar senha" className={styles.texto} type="password" value={confirmarSenha} onChange={(x) => { setConfirmarSenha(x.target.value); }} />
                                 </div>
                             </div>
                         </div>

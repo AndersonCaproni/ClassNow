@@ -8,5 +8,6 @@ public class CursoCompleto
     public decimal Valor { get; set;}
     public int ProfessorID { get; set; }
     public string Nome { get; set;}
+    public string Email { get;set; }
 
 }

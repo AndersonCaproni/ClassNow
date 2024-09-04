@@ -8,5 +8,6 @@ public class AulaAluno
     public string Categoria { get; set; }
     public string Descricao { get; set; }
     public int CursoID { get; set; }
+    public string Email { get; set; }
 
 }

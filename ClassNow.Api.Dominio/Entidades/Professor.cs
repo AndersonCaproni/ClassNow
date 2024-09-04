@@ -51,7 +51,8 @@ public class Professor
             if (string.IsNullOrEmpty(value))
                 throw new Exception("O telefone do professor é obrigatório.");
 
-            else if ((string.Concat(value.Where(char.IsDigit)).Length) != 11)
+
+            if (value.Length != 15)
                 throw new Exception("O telefone do professor é inválido.");
 
             _telefone = value;

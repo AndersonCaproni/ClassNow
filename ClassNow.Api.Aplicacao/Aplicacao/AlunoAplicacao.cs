@@ -54,7 +54,7 @@ public class AlunoAplicacao : IAlunoAplicacao
 
         if(aula == null)
             throw new Exception("Esta aula não existe");
-        
+
         if (aula.Ativo == false)
             throw new Exception("Aula já cancelada");
 
@@ -67,7 +67,6 @@ public class AlunoAplicacao : IAlunoAplicacao
         if (aluno == null)
             throw new Exception("Aluno inválido!");
         
-
         var alunoExistente = await _alunoRepositorio.ObterPorEmailAsync(aluno.Email);
 
         if (alunoExistente != null)
@@ -111,6 +110,9 @@ public class AlunoAplicacao : IAlunoAplicacao
             throw new Exception("Email inválido!");
 
         var alunoDominio = await _alunoRepositorio.ObterPorEmailAsync(email);
+
+        if(alunoDominio == null)
+            throw new Exception("Este e-mail não está cadastrado!");
 
         if (alunoDominio.Senha != senha)
             throw new Exception("Senha inválida!");

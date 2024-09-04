@@ -55,19 +55,6 @@
     background-color: rgb(7, 4, 44);
 }
 
-.box{
-    width: 10rem;
-    height: 10rem;
-    background-color: rgb(255, 255, 255);
-    margin: 1rem;
-    border-radius: 10px;
-    box-shadow: rgb(153, 148, 148) 1px 1px 12px;
-    padding: 3%;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    font-family: 'Quicksand', sans-serif;
-}
 
 .box1 {
     width: 10rem;
@@ -111,10 +98,13 @@
 }
 
 .perfil {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 2.5rem;
     height: 2.5rem;
-    background-color: white;
-    border-radius: 50%;
+    background-color: rgb(201, 210, 230);
+    border-radius: 100%;
     cursor: pointer;
 }
 
@@ -127,9 +117,10 @@
     visibility: hidden;
     opacity: 0;
     position: absolute;
+    min-width: 20rem;
     top: 5%;
     right: 4.2%;
-    background-color: rgb(189, 189, 189);
+    background-color: rgb(255, 255, 255);
     border-radius: 10px 0px 10px 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
     transition: opacity 0.3s ease, visibility 0.3s ease;
@@ -145,18 +136,23 @@
     height: 100%;
 }
 
-.icone{
+.icone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 2.5rem;
     height: 2.5rem;
-    background-color: rgb(255,255,255);
+    background-color: rgb(225, 226, 246);
     border-radius: 90%;
     border: 1px solid #000000;
     cursor: pointer;
 }
 
-.icone:hover{
+.icone:hover {
     transform: scale(1.04);
+    background-color: rgb(163, 185, 227);
 }
+
 
 .dadosPerfil{
     cursor: text;
@@ -171,7 +167,7 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    margin-top: 2rem;
+    margin-top: 3rem;
     height: 1.5rem;
 
 }
@@ -199,7 +195,7 @@
     width: 13rem;
     height: 14rem;
     background-color: rgb(255, 255, 255);
-    margin: 1rem;
+    margin: 1.5rem;
     border-radius: 7px;
     box-shadow: rgb(153, 148, 148) 1px 1px 12px;
     padding: 1rem 3% 3% 3%;
@@ -209,6 +205,19 @@
     font-family: 'Quicksand', sans-serif;
 }
 
+.boxAula{
+    width: 13rem;
+    height: 18rem;
+    background-color: rgb(255, 255, 255);
+    margin: 2rem;
+    border-radius: 7px;
+    box-shadow: rgb(153, 148, 148) 1px 1px 12px;
+    padding: 2rem 3% 2% 3%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Quicksand', sans-serif;
+}
 
 .categoriaCurso{
     text-transform: uppercase;
@@ -223,6 +232,21 @@
     align-items: center;
     font-size: 14px;
     margin-top: 0.5rem;
+    margin-bottom: 1.7rem;
+}
+
+.categoriaAula{
+    text-transform: uppercase;
+    width: 15rem;
+    min-height: 1rem;
+    background-color: #38afff;
+    border-radius: 5px;
+    box-shadow: rgb(153, 148, 148) 1px 1px 12px;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
     margin-bottom: 1.7rem;
 }
 
@@ -288,7 +312,7 @@
     transform: translate(-50%, -50%);
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
-    background-color: rgb(216, 216, 216);
+    background-color: rgb(255, 255, 255);
     width: 30rem;
     height: 30rem;
     z-index: 7
@@ -380,6 +404,44 @@
 
 .botaoSair:hover{
     color: #03497B;
+}
+
+.blocoNaoCurso{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 7rem;
+    height: 7rem;
+    border-style:solid;
+    border-color: #686868;
+    border-radius: 90%;
+    border-width: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+
+.blocoNaoCursoTexto{
+    font-family: 'Inter', sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #686868;
+    
+}
+
+.alertaNaoCurso{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    top: 50%;
+    left: 50%;
+    transform: translate(-75%,-80%);
+    width: 20rem;
+    height: 15rem;
+}
+
+@media (max-width: 768px) {
 }
 
 

@@ -13,6 +13,7 @@ import professor from '../../Servicos/professor';
 import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 import CloseIcon from '@mui/icons-material/Close';
 import { useNavigate } from 'react-router-dom';
+import ReactInputMask from 'react-input-mask';
 
 function PaginaProfessor() {
     const [editar, setEditar] = useState(false)
@@ -42,6 +43,7 @@ function PaginaProfessor() {
     const [trocouValor, setTrocouValor] = useState(false)
     const [loading, setLoading] = useState(false);
     const [temCurso, setTemCurso] = useState(false);
+    const [temAula, setTemAula] = useState(false);
 
     const LimparVariaveis = () => {
         setValor("")
@@ -54,10 +56,14 @@ function PaginaProfessor() {
             try {
                 if (prof.professorID) {
                     const resposta = await curso.ListarPorProfessor(prof.professorID);
+                    setTemAula(false);
+                    setLoading(false);
                     setCursos(resposta.data);
                 }
             } catch (error) {
                 alert.handleAlert(`Ops! Tivemos o seguinte problema ao buscar pelos cursos: \n${error.response.data}\n tente novamente!`, "danger");
+                setTemAula(true);
+                setLoading(false)
             }
         };
 
@@ -91,7 +97,8 @@ function PaginaProfessor() {
             setCriarCurso(false)
         }
         catch (error) {
-            alert.handleAlert(`Ops! Tivemos o seguinte problema ao criar o curso: \n${error.response.data}\n tente novamente!`, "danger")
+            console.log(error)
+            alert.handleAlert(`Ops! Tivemos o seguinte problema ao criar o curso: \n${error.response.data ? error.response.data : "Erro ao criar o curso, verifique as informações e"}\n tente novamente!`, "danger")
             setLoading(false)
         }
     }
@@ -187,7 +194,7 @@ function PaginaProfessor() {
                         <div className={styles.escurecer}></div>
                         <div className={styles.blocoCriar}>
                             <div className={styles.descricao}>
-                                <h2 className={styles.titulo}>Criando Curso</h2>
+                                <h2 className={styles.titulo}>Criar Curso</h2>
                             </div>
                             <form className={styles.formulario}>
                                 <label className={styles.titulo}>Categoria:</label>
@@ -200,7 +207,7 @@ function PaginaProfessor() {
                                 </div>
                                 <label className={styles.titulo}>Valor:</label>
                                 <div className={styles.dado}>
-                                    <input placeholder="valor" className={styles.texto} type="text" value={valor} onChange={(x) => { setValor(x.target.value) }} />
+                                    <ReactInputMask placeholder="valor" className={styles.texto} type="number" value={valor} onChange={(x) => { setValor(x.target.value) }} />
                                 </div>
                             </form>
                             <div className={styles.botoes}>
@@ -217,7 +224,7 @@ function PaginaProfessor() {
                         <div className={styles.escurecer}></div>
                         <div className={styles.blocoCriar}>
                             <div className={styles.descricao}>
-                                <h2 className={styles.titulo}>Editando Curso</h2>
+                                <h2 className={styles.titulo}>Editar Curso</h2>
                             </div>
                             <form className={styles.formulario}>
                                 <label className={styles.titulo}>Categoria:</label>
@@ -230,7 +237,7 @@ function PaginaProfessor() {
                                 </div>
                                 <label className={styles.titulo}>Valor:</label>
                                 <div className={styles.dado}>
-                                    <input placeholder="valor (Deixe em branco para não alterar)" className={styles.texto} type="text" value={valor} onChange={(x) => { setValor(x.target.value); setTrocouValor(true) }} />
+                                    <input placeholder="valor (Deixe em branco para não alterar)" className={styles.texto} type="number" value={valor} onChange={(x) => { setValor(x.target.value); setTrocouValor(true) }} />
                                 </div>
                             </form>
                             <div className={styles.botoes}>
@@ -342,33 +349,50 @@ function PaginaProfessor() {
                         {
                             dadosPagina ?
                                 <>
+                                    <>
+                                        {
+                                            temAula ?
 
-                                    {cursos.map((curso) => (
-                                        <div key={curso.id} className={styles.boxCurso}>
-                                            <div className={styles.categoriaCurso}>Categoria: {curso.categoria}</div>
-                                            <div className={styles.descricaoCurso}><p><b>Descrição:</b>{curso.descricao}</p></div>
-                                            <div className={styles.valor}><p><b>Valor:</b> R$ {curso.valor}</p></div>
-                                            <div className={styles.botaoComprar}>
-                                                <Botao onClick={() => { LimparVariaveis(); setEditarCursos(true); setIdEditarCurso(curso.cursoID); setDadosCursos(curso) }} tipo='comprar'>Editar</Botao>
-                                                <Botao onClick={() => { setCancelarCurso(true); setDadosCursos(curso) }} tipo='comprar'>Cancelar</Botao>
-                                            </div>
-                                        </div>
-                                    ))}
+                                                <div className={styles.alertaNaoCurso}>
+                                                    <div className={styles.blocoNaoCurso}>
+                                                        <CloseIcon sx={{ fontSize: 100 }} color="action" />
+                                                    </div>
+                                                    <div className={styles.blocoNaoCursoTexto}>
+                                                        Não há Cursos!
+                                                    </div>
+                                                </div>
+                                                :
+                                                <>
+                                                    {cursos.map((curso) => (
+                                                        <div key={curso.id} className={styles.boxCurso}>
+                                                            <div className={styles.categoriaCurso}>Categoria: {curso.categoria}</div>
+                                                            <div className={styles.descricaoCurso}><p><b>Descrição:</b>{curso.descricao}</p></div>
+                                                            <div className={styles.valor}><p><b>Valor:</b> R$ {curso.valor}</p></div>
+                                                            <div className={styles.botaoComprar}>
+                                                                <Botao onClick={() => { LimparVariaveis(); setEditarCursos(true); setIdEditarCurso(curso.cursoID); setDadosCursos(curso) }} tipo='comprar'>Editar</Botao>
+                                                                <Botao onClick={() => { setCancelarCurso(true); setDadosCursos(curso) }} tipo='comprar'>Cancelar</Botao>
+                                                            </div>
+                                                        </div>
+                                                    ))}
+
+                                                </>
+                                        }
+                                    </>
 
                                 </>
                                 :
                                 <>
                                     {
                                         temCurso ?
-                                            <>
+                                            <div className={styles.alertaNaoCurso}>
                                                 <div className={styles.blocoNaoCurso}>
                                                     <CloseIcon sx={{ fontSize: 100 }} color="action" />
                                                 </div>
-                                                <div className={styles.blocoNaoCursoTexto}>
+                                                <div className={styles.blocoNaoAulaTexto}>
                                                     Não há aulas vendidas!
                                                 </div>
+                                            </div>
 
-                                            </>
                                             :
                                             <>
                                                 {aulas.map((aula) => (
@@ -377,7 +401,7 @@ function PaginaProfessor() {
                                                         <div className={styles.categoriaAula}>Categoria: {aula.categoria}</div>
                                                         <div className={styles.descricaoAula}><p><b>Descrição:</b> {aula.descricao}</p></div>
                                                         <div className={styles.alunoAula}><p><b>Aluno:</b> {aula.nome}</p></div>
-                                                        <div className={styles.alunoAula}><p><b>E-Mail:</b> {aula.email}</p></div>
+                                                        <div className={styles.alunoAula}><p><b>E-mail:</b> {aula.email}</p></div>
                                                         <div className={styles.alunoAula}><p><b>Telefone:</b> {aula.telefone}</p></div>
                                                         <div className={styles.botaoComprar}>
                                                             <Botao onClick={() => { setCancelarAula(true); setDadosAulas(aula) }} tipo='comprar'>Cancelar Aula</Botao>

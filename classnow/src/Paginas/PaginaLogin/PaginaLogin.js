@@ -35,6 +35,7 @@ function PaginaLogin() {
                 }
             }
             catch (error) {
+                console.log(error)
                 alert.handleAlert(`Ops! Tivemos o seguinte problema no login: \n${error.response.data}\n tente novamente!`, "danger")
                 setLoading(false);
             }

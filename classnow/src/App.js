@@ -6,6 +6,7 @@ import PaginaCadastroProfessor from './Paginas/PaginaCadastroProfessor/PaginaCad
 import PaginaAluno from './Paginas/PaginaAluno/PaginaAluno';
 import PaginaProfessor from './Paginas/PaginaProfessor/PaginaProfessor';
 import { AlertProvider } from'./context/Alert/AlertProvider'
+import InputMask from 'react-input-mask';
 
 function App() {
   return (

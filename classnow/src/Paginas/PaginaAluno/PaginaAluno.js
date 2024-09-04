@@ -11,6 +11,8 @@ import { useNavigate } from 'react-router-dom';
 import curso from '../../Servicos/curso'
 import aluno from '../../Servicos/aluno'
 import { useAlert } from '../../Uteis/useAlert';
+import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
+import CloseIcon from '@mui/icons-material/Close';
 
 function PaginaAluno() {
     const navigate = useNavigate();
@@ -32,6 +34,7 @@ function PaginaAluno() {
     const [confirmarID, setConfirmarID] = useState("")
     const [confirmarCategoria, setConfirmarCategoria] = useState("")
     const [confirmarProfessor, setConfirmarProfessor] = useState("")
+    const [temAula, setTemAula] = useState(false);
 
     useEffect(() => {
         const ListarCursos = async () => {
@@ -52,9 +55,11 @@ function PaginaAluno() {
                 if (estudante.alunoID) {
                     const resposta = await aluno.ListarAulas(estudante.alunoID);
                     setAulas(resposta.data);
+                    setTemAula(false);
                 }
             } catch (error) {
                 alert.handleAlert(`Ops! Tivemos o seguinte problema ao buscar pelas aulas: \n${error.response.data}\n tente novamente!`, "danger");
+                setTemAula(true);
             }
         };
 
@@ -103,7 +108,7 @@ function PaginaAluno() {
                         <div className={styles.nomeDescricaoCursoConfirmar}><b>Descrição:</b></div>
                         <div className={styles.descricaoCursoConfirmar}>{confirmarDescricao}</div>
                         <div className={styles.professorCursoConfirmar}><p><b>Professor(a):</b> {confirmarProfessor}</p></div>
-                        <div className={styles.valorConfirmar}>{confirmarValor} R$</div>
+                        <div className={styles.valorConfirmar}>R$ {confirmarValor}</div>
                         <div className={styles.botoesCompra}>
                             <Botao onClick={ComprarCurso} tipo='editar'>Confirmar Compra</Botao>
                             <Botao onClick={() => { setComprar(false) }} tipo='editar'>Cancelar</Botao>
@@ -112,7 +117,7 @@ function PaginaAluno() {
                 </div>
             }
 
-            {   
+            {
                 cancelar &&
                 <div>
                     <div className={styles.escurecer}></div>
@@ -151,9 +156,12 @@ function PaginaAluno() {
                     <div className={styles.dadosPagina}></div>
                     <div className={styles.perfilContainer}>
                         <div className={styles.perfil}>
+                            <PersonOutlineIcon fontSize="large" color="disabled" />
                             <div className={styles.infoPerfil}>
                                 <div className={styles.caixaIcone}>
-                                    <div className={styles.icone}></div>
+                                    <div className={styles.icone}>
+                                        <PersonOutlineIcon fontSize="large" color="disabled" />
+                                    </div>
                                 </div>
                                 <div className={styles.dadosPerfil}>
                                     <p><b>ID:</b> {estudante.alunoID}</p>
@@ -208,31 +216,48 @@ function PaginaAluno() {
                             </>
                             :
                             <>
-                                {aulas.map((aula) => (
-                                    <div className={styles.box} key={aula.id}>
-                                        <div className={styles.categoriaCurso}>Categoria: {aula.categoria}</div>
-                                        <div className={styles.descricaoCurso}><p><b>Descrição:</b>{aula.descricao}</p></div>
-                                        <div className={styles.professorCurso}><p><b>Professor(a):</b> {aula.nome}</p></div>
-                                        <div className={styles.valorComprar}>
-                                            <div className={styles.botaoComprar}>
-                                                <Botao onClick={
-                                                    () => {
-                                                        setConfirmarID(aula.cursoID)
-                                                        setConfirmarDescricao(aula.descricao)
-                                                        setConfirmarCategoria(aula.categoria)
-                                                        setConfirmarProfessor(aula.nome)
-                                                        setCancelar(true)
-                                                    }
-                                                } tipo='comprar'>Cancelar Aula</Botao>
+                                {
+
+                                    temAula ?
+                                        <div className={styles.alertaNaoCurso}>
+                                            <div className={styles.blocoNaoCurso}>
+                                                <CloseIcon sx={{ fontSize: 100 }} color="action" />
+                                            </div>
+                                            <div className={styles.blocoNaoCursoTexto}>
+                                                Não há aulas!
                                             </div>
                                         </div>
-                                    </div>
-                                ))}
+                                        :
+
+                                        <>
+                                            {aulas.map((aula) => (
+                                                <div className={styles.boxAula} key={aula.id}>
+                                                    <div className={styles.categoriaAula}>Categoria: {aula.categoria}</div>
+                                                    <div className={styles.descricaoCurso}><p><b>Descrição:</b>{aula.descricao}</p></div>
+                                                    <div className={styles.professorCurso}><p><b>Professor(a):</b> {aula.nome}</p></div>
+                                                    <div className={styles.professorCurso}><p><b>E-mail:</b> {aula.email}</p></div>
+                                                    <div className={styles.valorComprar}>
+                                                        <div className={styles.botaoComprar}>
+                                                            <Botao onClick={
+                                                                () => {
+                                                                    setConfirmarID(aula.cursoID)
+                                                                    setConfirmarDescricao(aula.descricao)
+                                                                    setConfirmarCategoria(aula.categoria)
+                                                                    setConfirmarProfessor(aula.nome)
+                                                                    setCancelar(true)
+                                                                }
+                                                            } tipo='comprar'>Cancelar Aula</Botao>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            ))}
+                                        </>
+                                }
                             </>
                     }
                 </div>
             </div>
-        </div>
+        </div >
     )
 }
 

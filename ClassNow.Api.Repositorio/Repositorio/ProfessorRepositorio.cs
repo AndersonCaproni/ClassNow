@@ -58,7 +58,7 @@ public class ProfessorRepositorio : IProfessorRepositorio
 
     public async Task<Aula> ObterAulaAsync(int alunoID, int cursoID)
     {
-        return await _contexto.Aulas.Where(x => x.AlunoID == alunoID && x.CursoID == cursoID).FirstOrDefaultAsync();
+        return await _contexto.Aulas.Where(x => x.AlunoID == alunoID && x.CursoID == cursoID && x.Ativo == true).FirstOrDefaultAsync();
 
     }
 

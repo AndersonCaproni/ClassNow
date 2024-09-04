@@ -4,7 +4,8 @@ import LogoCompleto from '../../Componentes/ComponenteLogoCompleta/LogoCompleta'
 import professor from '../../Servicos/professor';
 import styles from './_paginaCadastroProfessor.module.css'
 import { useNavigate } from 'react-router-dom';
-import { useAlert} from '../../Uteis/useAlert'
+import { useAlert } from '../../Uteis/useAlert'
+import ReactInputMask from 'react-input-mask';
 
 function PaginaCadastroProfessor() {
     const navigate = useNavigate();
@@ -18,17 +19,17 @@ function PaginaCadastroProfessor() {
     const [confirmarSenha, setConfirmarSenha] = useState("");
 
     const Cadastrar = async () => {
-        if(senha === confirmarSenha && senha !== ""){
-            try{
-                await professor.Criar(nome,email,senha,telefone,estado,cidade)
+        if (senha === confirmarSenha && senha !== "") {
+            try {
+                await professor.Criar(nome, email, senha, telefone, estado, cidade)
                 alert.handleAlert(`Professor cadastrado com sucesso!`, "success")
                 navigate('/paginaLogin');
             }
-            catch (error){
+            catch (error) {
                 alert.handleAlert(`Ops! Tivemos o seguinte problema no cadastro: \n${error.response.data}\n tente novamente!`, "danger")
             }
         }
-        else{
+        else {
             alert.handleAlert(`Senhas não conferem!`, "danger")
         }
     }
@@ -37,44 +38,58 @@ function PaginaCadastroProfessor() {
         <div className={styles.corpo}>
             <div className={styles.blocoLogin}>
                 <div className={styles.logo}>
-                    <LogoCompleto/>
+                    <LogoCompleto />
                 </div>
 
                 <form className={styles.formulario}>
                     <div className={styles.formsEsquerdo}>
                         <label className={styles.titulo}>Nome:</label>
-                        <div className={styles.dado}>
-                            <input placeholder="nome" className={styles.texto} type="text" value={nome} onChange={(x) => { setNome(x.target.value); }}/>
+                        <div className={styles.blocoTexto}>
+                            <div className={styles.dado}>
+                                <input placeholder="nome" className={styles.texto} type="text" value={nome} onChange={(x) => { setNome(x.target.value); }} />
+                            </div>
                         </div>
                         <label className={styles.titulo}>E-mail:</label>
-                        <div className={styles.dado}>
-                            <input placeholder="e-mail" className={styles.texto} type="text" value={email} onChange={(x) => { setEmail(x.target.value); }}/>
+                        <div className={styles.blocoTexto}>
+                            <div className={styles.dado}>
+                                <input placeholder="e-mail" className={styles.texto} type="text" value={email} onChange={(x) => { setEmail(x.target.value); }} />
+                            </div>
                         </div>
                         <label className={styles.titulo}>Telefone:</label>
-                        <div className={styles.dado}>
-                            <input placeholder="telefone" className={styles.texto} type="text" value={telefone} onChange={(x) => { setTelefone(x.target.value); }}/>
+                        <div className={styles.blocoTexto}>
+                            <div className={styles.dado}>
+                                <ReactInputMask maskChar={null} mask="(99) 99999-9999" placeholder="telefone" className={styles.texto} type="text" value={telefone} onChange={(x) => { setTelefone(x.target.value); }} />
+                            </div>
                         </div>
                     </div>
                     <div className={styles.formsDireito}>
-                    <label className={styles.titulo}>Estado:</label>
-                        <div className={styles.dado}>
-                            <input placeholder="estado" className={styles.texto} type="text" value={estado} onChange={(x) => { setEstado(x.target.value); }}/>
+                        <label className={styles.titulo}>Estado:</label>
+                        <div className={styles.blocoTexto}>
+                            <div className={styles.dado}>
+                                <input placeholder="estado" className={styles.texto} type="text" value={estado} onChange={(x) => { setEstado(x.target.value); }} />
+                            </div>
                         </div>
                         <label className={styles.titulo}>Cidade:</label>
-                        <div className={styles.dado}>
-                            <input placeholder="cidade" className={styles.texto} type="text" value={cidade} onChange={(x) => { setCidade(x.target.value); }}/>
+                        <div className={styles.blocoTexto}>
+                            <div className={styles.dado}>
+                                <input placeholder="cidade" className={styles.texto} type="text" value={cidade} onChange={(x) => { setCidade(x.target.value); }} />
+                            </div>
                         </div>
                         <div className={styles.senhas}>
                             <div className={styles.senhaSistema}>
-                                <label className={styles.titulo}>Senha:</label>
-                                <div className={styles.dado}>
-                                    <input placeholder="senha" className={styles.texto} type="password" value={senha} onChange={(x) => { setSenha(x.target.value); }}/>
+                                <label className={styles.tituloSenha}>Senha:</label>
+                                <div className={styles.blocoTextoSenha}>
+                                <div className={styles.dadoSenha}>
+                                    <input placeholder="senha" className={styles.texto} type="password" value={senha} onChange={(x) => { setSenha(x.target.value); }} />
+                                </div>
                                 </div>
                             </div>
                             <div className={styles.senhaSistema}>
-                                <label className={styles.titulo}>Confirmar Senha:</label>
-                                <div className={styles.dado}>
-                                    <input placeholder="confirmar senha" className={styles.texto} type="password" value={confirmarSenha} onChange={(x) => { setConfirmarSenha(x.target.value); }}/>
+                                <label className={styles.tituloSenha}>Confirmar Senha:</label>
+                                <div className={styles.blocoTextoSenha}>
+                                <div className={styles.dadoSenhaDireito}>
+                                    <input placeholder="confirmar senha" className={styles.texto} type="password" value={confirmarSenha} onChange={(x) => { setConfirmarSenha(x.target.value); }} />
+                                </div>
                                 </div>
                             </div>
                         </div>
@@ -82,7 +97,7 @@ function PaginaCadastroProfessor() {
                 </form>
                 <div className={styles.botoes}>
                     <Botao onClick={Cadastrar} tipo='login'>Cadastrar</Botao>
-                    <Botao onClick={() => {navigate('/paginaLogin')}} tipo='login'>Cancelar</Botao>
+                    <Botao onClick={() => { navigate('/paginaLogin') }} tipo='login'>Cancelar</Botao>
                 </div>
 
 

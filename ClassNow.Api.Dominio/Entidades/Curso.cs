@@ -6,16 +6,17 @@ public class Curso
 
     private string _categoria;
     private string _descricao;
+    private decimal _valor;
 
     #endregion
 
     #region Propriedade
-    
+
     public int CursoID { get; set; }
     public int ProfessorID { get; set; }
     public Professor Professor { get; set; }
-    public string Categoria 
-    { 
+    public string Categoria
+    {
         get { return _categoria; }
         set
         {
@@ -25,7 +26,7 @@ public class Curso
             _categoria = value;
         }
     }
-    public string Descricao 
+    public string Descricao
     {
         get { return _descricao; }
         set
@@ -36,7 +37,18 @@ public class Curso
             _descricao = value;
         }
     }
-    public decimal Valor { get; set; }
+    public decimal Valor
+    {
+        get { return _valor; }
+        set
+        {       
+            if (value <= 0)
+                throw new Exception("Valor inválido.");
+
+            _valor = value;
+        }
+    }
+
     public bool Ativo { get; set; }
     public List<Aula> Aulas { get; set; }
 

@@ -39,7 +39,7 @@ public class AlunoRepositorio : IAlunoRepositorio
     public async Task<IEnumerable<AulaAluno>> ListarAulasAsync(int alunoID)
     {
         const string sql = @"
-        SELECT au.AulaID, p.ProfessorID, p.Nome, c.Categoria, c.Descricao, c.CursoID
+        SELECT au.AulaID, p.ProfessorID, p.Nome, c.Categoria, c.Descricao, c.CursoID, p.Email
         FROM Aluno AS al 
         INNER JOIN Aula AS au ON al.AlunoID = au.AlunoID 
         INNER JOIN Curso AS c ON au.CursoID = c.CursoID 
@@ -58,7 +58,7 @@ public class AlunoRepositorio : IAlunoRepositorio
 
     public async Task<Aula> ObterAulaAsync(int alunoID, int cursoID)
     {
-        return await _contexto.Aulas.Where(x => x.AlunoID == alunoID && x.CursoID == cursoID).FirstOrDefaultAsync();
+        return await _contexto.Aulas.Where(x => x.AlunoID == alunoID && x.CursoID == cursoID && x.Ativo == true).FirstOrDefaultAsync();
     }
 
     public Task<Aluno> ObterPorIDAsync(int alunoID)

@@ -87,6 +87,9 @@ public class ProfessorAplicacao : IProfessorAplicacao
 
         var professorDominio = await _professorRepositorio.ObterPorEmailAsync(email);
 
+        if(professorDominio == null)
+            throw new Exception("Este e-mail não está cadastrado!");
+
         if (professorDominio.Senha != senha)
             throw new Exception("Senha inválida!");
 

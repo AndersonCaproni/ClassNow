@@ -37,7 +37,7 @@ public class CursoRepositorio : ICursoRepositorio
     public async Task<IEnumerable<CursoCompleto>> ListarCursosAsync(bool ativo)
     {
         const string sql = @"
-        SELECT c.CursoID, c.Categoria, c.Descricao, c.Valor, p.ProfessorID, p.Nome
+        SELECT c.CursoID, c.Categoria, c.Descricao, c.Valor, p.ProfessorID, p.Nome, p.Email
         FROM Curso AS c 
         INNER JOIN Professor AS p ON c.ProfessorID = p.ProfessorID 
         WHERE c.Ativo = @Ativo AND p.Ativo = 1";

@@ -236,6 +236,154 @@
   }
 }
 
+@media (max-width: 768px) {
+
+  input, textarea {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  .corpo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(189, 189, 189, 0.9);
+  }
+
+  .blocoLogin {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 70%;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    margin-bottom: 10%;
+    margin-right: 5%;
+  }
+  
+  .formulario {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 36%;
+  }
+
+  .dado {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
+    border-radius: 25px;
+    padding: 0.6em;
+    margin-bottom: 7%;
+    border: none;
+    outline: none;
+    color: white;
+    background-color: #ffffff;
+    transition: .4s;
+    width: 100%;
+    height: 50%;
+  }
+  
+  .dado:hover {
+    transform: scale(1.01);
+    transition: .4s;
+    border: 1px solid black;
+    box-shadow: rgba(0, 0, 0, 20) 1px 0px 10px;
+  }
+
+  .botao {
+    position: relative;
+    width: 40%;
+    margin-bottom: 10%;
+    margin-top: 2rem;
+  }
+  
+  .botao input[type=checkbox] {
+    display: none;
+  }
+  
+  .estados {
+    display: block;
+    overflow: hidden;
+    cursor: pointer;
+    border: 1px solid #999999;
+    border-radius: 50px;
+  }
+  
+  .ligado {
+    width: 200%;
+    margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+  }
+  
+  .ligado:before,
+  .ligado:after {
+    float: left;
+    width: 50%;
+    height: 30%;
+    padding: 0;
+    line-height: 30px;
+    font-size: 20px;
+    color: white;
+    font-family: Trebuchet, Arial, sans-serif;
+    font-weight: bold;
+    box-sizing: border-box;
+  }
+  
+  .ligado:before {
+    content: "Aluno";
+    background-color: #03497B;
+    color: #FFFFFF;
+    text-align: center;
+  }
+  
+  .ligado:after {
+    content: "Professor";
+    background-color: #FFFFFF;
+    color: #03497B;
+    text-align: center;
+  }
+  
+  .bolinha {
+    width: 35px;
+    margin: -2.5px;
+    background: #FFFFFF;
+    border: 1px solid #999999;
+    border-radius: 50px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 89%;
+    transition: all 0.3s ease-in 0s;
+  }
+  
+  .tipos:checked+.estados .ligado {
+    margin-left: 0;
+  }
+  
+  .tipos:checked+.estados .bolinha {
+    right: 0;
+  }
+  
+  .botoes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+    min-height: 2rem;
+  }
+  
+}
+
 @font-face {
   font-family: 'Inter';
   src: url('../../Inter/Inter-VariableFont_slnt\,wght.ttf') format('truetype');

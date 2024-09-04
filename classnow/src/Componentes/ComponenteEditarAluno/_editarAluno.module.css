@@ -9,7 +9,7 @@
     transform: translate(-50%, -50%);
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
-    background-color: rgb(216, 216, 216);
+    background-color: rgb(255, 255, 255);
     width: 30%;
     height: 60%;
     z-index: 7;
@@ -72,16 +72,16 @@
     margin-bottom: 7%;
     border: none;
     outline: none;
-    color: white;
-    background-color: #ffffff;
+    color: rgb(24, 23, 23);
+    background-color: #cacaca;
     transition: .4s;
 }
 
 .dado:hover {
-    transform: scale(1.02);
+    transform: scale(1.009);
     transition: .4s;
     border: 1px solid black;
-    box-shadow: rgba(0, 0, 0, 1) 1px 0px 5px;
+    box-shadow: rgba(0, 0, 0, 2) 1px 0px 20px;
 }
 
 .texto {
@@ -89,6 +89,7 @@
     outline: none;
     width: 100%;
     color: #000000;
+    background-color: #cacaca;
 }
 
 .titulo {

@@ -4,6 +4,7 @@ import styles from './_editarAluno.module.css'
 import { useAlert } from '../../Uteis/useAlert'
 import aluno from '../../Servicos/aluno';
 import { useNavigate } from 'react-router-dom';
+import ReactInputMask from 'react-input-mask'
 
 function EditarAluno({ children, dados, enviarEstado }) {
     const [nome, setNome] = useState("")
@@ -83,7 +84,7 @@ function EditarAluno({ children, dados, enviarEstado }) {
                 </div>
                 <label className={styles.titulo}>Telefone:</label>
                 <div className={styles.dado}>
-                    <input placeholder="telefone (deixe em branco para não alterar)" className={styles.texto} type="text" value={telefone} onChange={(x) => { setTelefone(x.target.value); setTrocouTelefone(true) }} />
+                <ReactInputMask maskChar={null} mask="(99) 99999-9999" placeholder="telefone (deixe em branco para não alterar)" className={styles.texto} type="text" value={telefone} onChange={(x) => { setTelefone(x.target.value); setTrocouTelefone(true) }} />
                 </div>
             </form>
             <div className={styles.botoes}>

@@ -4,6 +4,7 @@ import styles from './_editarProfessor.module.css'
 import professor from '../../Servicos/professor';
 import { useNavigate } from 'react-router-dom'
 import { useAlert } from '../../Uteis/useAlert'
+import ReactInputMask from 'react-input-mask'
 
 function EditarProfessor({ children, dados, enviarEstado }) {
     const [excluir, setExcluir] = useState(false);
@@ -136,7 +137,7 @@ function EditarProfessor({ children, dados, enviarEstado }) {
                     </div>
                     <label className={styles.titulo}>Telefone:</label>
                     <div className={styles.dado}>
-                        <input placeholder="telefone (Deixe em branco para não alterar)" className={styles.texto} type="text" value={telefone} onChange={(x) => { setTelefone(x.target.value); setTrocouTelefone(true) }}/>
+                    <ReactInputMask maskChar={null} mask="(99) 99999-9999" placeholder="telefone (Deixe em branco para não alterar)" className={styles.texto} type="text" value={telefone} onChange={(x) => { setTelefone(x.target.value); setTrocouTelefone(true) }}/>
                     </div>
                     <label className={styles.titulo}>Estado:</label>
                     <div className={styles.dado}>
