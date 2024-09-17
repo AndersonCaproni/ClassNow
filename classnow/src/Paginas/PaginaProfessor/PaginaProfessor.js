@@ -14,6 +14,8 @@ import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 import CloseIcon from '@mui/icons-material/Close';
 import { useNavigate } from 'react-router-dom';
 import ReactInputMask from 'react-input-mask';
+import LogoAluno from '../../Componentes/ComponenteLogoAluno/LogoAluno';
+import LogoSimples from '../../Componentes/ComponenteLogoSimples/LogoSimples';
 
 function PaginaProfessor() {
     const [editar, setEditar] = useState(false)
@@ -186,7 +188,9 @@ function PaginaProfessor() {
                 }
                 {
                     dadosPagina &&
-                    <Botao onClick={() => { LimparVariaveis(); setCriarCurso(true) }} tipo='criarCurso'><div>+</div></Botao>
+                    <div className={styles.botaoMais} >
+                        <Botao onClick={() => { LimparVariaveis(); setCriarCurso(true) }} tipo='criarCurso'>+</Botao>
+                    </div>
                 }
                 {
                     criarCurso &&
@@ -287,8 +291,15 @@ function PaginaProfessor() {
                 }
 
                 <div className={styles.corpoEsquerdo}>
-                    <div className={styles.logo}>
-                        <LogoPagina />
+                    <div className={styles.campoLogo}>
+                        <div className={styles.logo}>
+                            <LogoAluno />
+                        </div>
+                    </div>
+                    <div className={styles.logoSimples}>
+                        <div className={styles.caixaLogo}>
+                            <LogoSimples />
+                        </div>
                     </div>
                     <div className={styles.linha}></div>
                     <div className={styles.opcoes}>
@@ -297,6 +308,12 @@ function PaginaProfessor() {
                         </div>
                         <div className={styles.botaoFuncionalidade}>
                             <Botao tipo={segundafuncionalidadeAtiva} onClick={() => { setDadosPagina(true); setPrimeiraFuncionalidadeAtiva('funcionalidade'); setSegundaFuncionalidadeAtiva('funcionalidadeAtiva') }}> <FaBook style={{ marginRight: '8px', marginLeft: '5px' }} />{segundaFuncionalidade}</Botao>
+                        </div>
+                        <div className={styles.botaoFuncionalidadeMin}>
+                            <Botao tipo={primeirafuncionalidadeAtiva} onClick={() => { setDadosPagina(false); setPrimeiraFuncionalidadeAtiva('funcionalidadeAtiva'); setSegundaFuncionalidadeAtiva('funcionalidade') }}> <FaBookOpen style={{ marginLeft: '1.4rem' }} /></Botao>
+                        </div>
+                        <div className={styles.botaoFuncionalidadeMin}>
+                            <Botao tipo={segundafuncionalidadeAtiva} onClick={() => { setDadosPagina(true); setPrimeiraFuncionalidadeAtiva('funcionalidade'); setSegundaFuncionalidadeAtiva('funcionalidadeAtiva') }}> <FaBook style={{ marginLeft: '1.4rem' }} /></Botao>
                         </div>
                     </div>
                     <div className={styles.caixaSair}>

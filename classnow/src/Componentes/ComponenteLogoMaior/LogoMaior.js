@@ -1,10 +1,10 @@
-import styles from './_logoSimples.module.css'
+import styles from './_logoMaior.module.css'
 import logo from '../../img/logo2.png'
 
-function LogoSimples(){
+function LogoMaior(){
     return(
         <img src={logo} className={styles.imagem}></img>
     )
 }
 
-export default LogoSimples;
+export default LogoMaior;

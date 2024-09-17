@@ -117,7 +117,7 @@ function EditarProfessor({ children, dados, enviarEstado }) {
                     <div className={styles.escurecer}></div>
                     <div className={styles.excluir}>
                         <div className={styles.textoExcluir}>
-                            AO CLICAR EM EXCLUIR VOCÊ PERDERÁ TOTAL ACESSO A NOSSAS FERRAMENTAS!
+                            AO CLICAR EM "EXCLUIR", VOCÊ PERDERÁ TOTAL ACESSO ÀS NOSSAS FERRAMENTAS!
                         </div>
                         <div className={styles.botoesExcluir}>
                             <Botao onClick={Excluir} tipo='excluirUsuario'>EXCLUIR</Botao>
@@ -133,19 +133,19 @@ function EditarProfessor({ children, dados, enviarEstado }) {
                 <form className={styles.formulario}>
                     <label className={styles.titulo}>Nome:</label>
                     <div className={styles.dado}>
-                        <input placeholder="nome (Deixe em branco para não alterar)" className={styles.texto} type="text" value={nome} onChange={(x) => { setNome(x.target.value); setTrocouNome(true) }}/>
+                        <input placeholder="nome (Deixe em branco para não alterar)" className={styles.texto} type="text" value={nome} onChange={(x) => { setNome(x.target.value); setTrocouNome(true) }} />
                     </div>
                     <label className={styles.titulo}>Telefone:</label>
                     <div className={styles.dado}>
-                    <ReactInputMask maskChar={null} mask="(99) 99999-9999" placeholder="telefone (Deixe em branco para não alterar)" className={styles.texto} type="text" value={telefone} onChange={(x) => { setTelefone(x.target.value); setTrocouTelefone(true) }}/>
+                        <ReactInputMask maskChar={null} mask="(99) 99999-9999" placeholder="telefone (Deixe em branco para não alterar)" className={styles.texto} type="text" value={telefone} onChange={(x) => { setTelefone(x.target.value); setTrocouTelefone(true) }} />
                     </div>
                     <label className={styles.titulo}>Estado:</label>
                     <div className={styles.dado}>
-                        <input placeholder="estado (Deixe em branco para não alterar)" className={styles.texto} type="text" value={estado} onChange={(x) => { setEstado(x.target.value); setTrocouEstado(true) }}/>
+                        <input placeholder="estado (Deixe em branco para não alterar)" className={styles.texto} type="text" value={estado} onChange={(x) => { setEstado(x.target.value); setTrocouEstado(true) }} />
                     </div>
                     <label className={styles.Cidade}>Cidade:</label>
                     <div className={styles.dado}>
-                        <input placeholder="cidade (Deixe em branco para não alterar)" className={styles.texto} type="text" value={cidade} onChange={(x) => { setCidade(x.target.value); setTrocouCidade(true) }}/>
+                        <input placeholder="cidade (Deixe em branco para não alterar)" className={styles.texto} type="text" value={cidade} onChange={(x) => { setCidade(x.target.value); setTrocouCidade(true) }} />
                     </div>
                 </form>
                 <div className={styles.botoes}>

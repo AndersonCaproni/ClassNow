@@ -11,24 +11,25 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   width: 40rem;
-  height: 70%;
+  height: 100%;
+  gap: 2.5rem;
 }
 
 .logo {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  margin-bottom: 10%;
-  margin-right: 10%;
+  width: 70%;
 }
 
 .formulario {
   display: flex;
   flex-direction: column;
-  width: 90%;
-  height: 36%;
+  width: 100%;
+  height: auto;
+  padding: 0;
 }
 
 .dado {
@@ -38,7 +39,7 @@
   gap: 0.5em;
   border-radius: 25px;
   padding: 0.6em;
-  margin-bottom: 7%;
+  margin: 0 0 1rem 0;
   border: none;
   outline: none;
   color: white;
@@ -79,14 +80,13 @@
 
 .titulo {
   font-family: 'Inter', sans-serif;
-  margin-bottom: 5%;
+  margin: 1rem 0 0.5rem 0;
 }
 
 .botao {
   position: relative;
+  margin-top: 1rem;
   width: 40%;
-  margin-bottom: 10%;
-  margin-top: 3%;
 }
 
 .botao input[type=checkbox] {
@@ -159,7 +159,8 @@
 .botoes {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: center;
+  gap: 2rem;
   width: 100%;
   min-height: 2rem;
 }
@@ -256,24 +257,36 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
-    height: 70%;
+    justify-content: center;
+    width: 80%;
+    height: 100%;
+    gap: 2rem;
+    
+  }
+
+  .blocoTexto {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 1rem;
+    margin: 0;
   }
   
   .logo {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 90%;
-    margin-bottom: 10%;
-    margin-right: 5%;
+    width: 15rem;
   }
   
   .formulario {
     display: flex;
     flex-direction: column;
-    width: 80%;
-    height: 36%;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
   }
 
   .dado {
@@ -283,14 +296,14 @@
     gap: 0.5em;
     border-radius: 25px;
     padding: 0.6em;
-    margin-bottom: 7%;
     border: none;
     outline: none;
     color: white;
     background-color: #ffffff;
     transition: .4s;
     width: 100%;
-    height: 50%;
+    height: 100%;
+    margin: 0;
   }
   
   .dado:hover {
@@ -302,9 +315,8 @@
 
   .botao {
     position: relative;
-    width: 40%;
-    margin-bottom: 10%;
-    margin-top: 2rem;
+    width: 50%;
+    margin: 1rem 0 0 0 ;
   }
   
   .botao input[type=checkbox] {
@@ -373,13 +385,20 @@
   .tipos:checked+.estados .bolinha {
     right: 0;
   }
+
+  .titulo {
+    font-family: 'Inter', sans-serif;
+    margin: 1.7rem 0 1rem 0;
+  }
+  
   
   .botoes {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: center;
+    gap: 2rem;
     width: 100%;
-    min-height: 2rem;
+    margin-top: 1rem;
   }
   
 }

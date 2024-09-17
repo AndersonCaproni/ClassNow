@@ -36,7 +36,7 @@ function EditarAluno({ children, dados, enviarEstado }) {
                     enviarEstado(false)
                 }
                 else {
-                    alert.handleAlert(`Voce não está alterando nenhuma informação!`, "danger") 
+                    alert.handleAlert(`Voce não está alterando nenhuma informação!`, "danger")
                 }
             }
 
@@ -47,52 +47,52 @@ function EditarAluno({ children, dados, enviarEstado }) {
     }
 
     const Excluir = async () => {
-        try{
+        try {
             await aluno.Deletar(dados.alunoID);
             alert.handleAlert(`Aluno deletado com sucesso!`, "success")
             navigate('/')
         }
-        catch(error){
+        catch (error) {
             alert.handleAlert(`Ops! Tivemos o seguinte problema na exclusão: \n${error}\n tente novamente!`, "danger")
         }
     }
 
     return (
         <>
-        {excluir &&
-        <>
-        <div className={styles.escurecer}></div>
-        <div className={styles.excluir}>
-            <div className={styles.textoExcluir}>
-                AO CLICAR EM EXCLUIR VOCÊ PERDERÁ TOTAL ACESSO A NOSSAS FERRAMENTAS!
-            </div>
-            <div className={styles.botoesExcluir}>
-                <Botao onClick={Excluir} tipo='excluirUsuario'>EXCLUIR</Botao>
-                <Botao onClick={() => {setExcluir(false)}}tipo='excluir'>Voltar</Botao>
-            </div>
-        </div>
-        </>
-        }
-        <div className={styles.corpo}>
-            <div className={styles.descricao}>
-                <h2 className={styles.titulo}>Editar Aluno</h2>
-            </div>
-            <form className={styles.formulario}>
-                <label className={styles.titulo}>Nome:</label>
-                <div className={styles.dado}>
-                    <input placeholder="nome (deixe em branco para não alterar)" className={styles.texto} type="text" value={nome} onChange={(x) => { setNome(x.target.value); setTrocouNome(true) }} />
+            {excluir &&
+                <>
+                    <div className={styles.escurecer}></div>
+                    <div className={styles.excluir}>
+                        <div className={styles.textoExcluir}>
+                            AO CLICAR EM "EXCLUIR", VOCÊ PERDERÁ TOTAL ACESSO ÀS NOSSAS FERRAMENTAS!
+                        </div>
+                        <div className={styles.botoesExcluir}>
+                            <Botao onClick={Excluir} tipo='excluirUsuario'>EXCLUIR</Botao>
+                            <Botao onClick={() => { setExcluir(false) }} tipo='excluir'>Voltar</Botao>
+                        </div>
+                    </div>
+                </>
+            }
+            <div className={styles.corpo}>
+                <div className={styles.descricao}>
+                    <h2 className={styles.titulo}>Editar Aluno</h2>
                 </div>
-                <label className={styles.titulo}>Telefone:</label>
-                <div className={styles.dado}>
-                <ReactInputMask maskChar={null} mask="(99) 99999-9999" placeholder="telefone (deixe em branco para não alterar)" className={styles.texto} type="text" value={telefone} onChange={(x) => { setTelefone(x.target.value); setTrocouTelefone(true) }} />
+                <form className={styles.formulario}>
+                    <label className={styles.titulo}>Nome:</label>
+                    <div className={styles.dado}>
+                        <input placeholder="nome (deixe em branco para não alterar)" className={styles.texto} type="text" value={nome} onChange={(x) => { setNome(x.target.value); setTrocouNome(true) }} />
+                    </div>
+                    <label className={styles.titulo}>Telefone:</label>
+                    <div className={styles.dado}>
+                        <ReactInputMask maskChar={null} mask="(99) 99999-9999" placeholder="telefone (deixe em branco para não alterar)" className={styles.texto} type="text" value={telefone} onChange={(x) => { setTelefone(x.target.value); setTrocouTelefone(true) }} />
+                    </div>
+                </form>
+                <div className={styles.botoes}>
+                    <Botao onClick={AlterarAluno} tipo='login'>Editar</Botao>
+                    <Botao onClick={() => { setExcluir(true) }} tipo='login'>Excluir</Botao>
+                    {children}
                 </div>
-            </form>
-            <div className={styles.botoes}>
-                <Botao onClick={AlterarAluno} tipo='login'>Editar</Botao>
-                <Botao onClick={() => {setExcluir(true)}} tipo='login'>Excluir</Botao>
-                {children}
             </div>
-        </div>
         </>
     )
 }

@@ -1,11 +1,11 @@
 import { useState } from 'react'
 import Botao from '../../Componentes/ComponenteBotao/Botao'
-import LogoCompleto from '../../Componentes/ComponenteLogoCompleta/LogoCompleta'
 import aluno from '../../Servicos/aluno'
 import styles from './_paginaCadastroAluno.module.css'
 import { useNavigate } from 'react-router-dom'
 import { useAlert } from '../../Uteis/useAlert'
 import ReactInputMask from 'react-input-mask'
+import ImagemLogo from '../../Componentes/ComponenteImagemLogo/Imagemlogo'
 
 function PaginaCadastroAluno() {
     const navigate = useNavigate();
@@ -36,25 +36,31 @@ function PaginaCadastroAluno() {
         <div className={styles.corpo}>
             <div className={styles.blocoLogin}>
                 <div className={styles.logo}>
-                    <LogoCompleto />
+                    <ImagemLogo />
                 </div>
                 <form className={styles.formulario}>
-                    <label className={styles.titulo}>Nome:</label>
-                    <div className={styles.blocoTexto}>
-                        <div className={styles.dado}>
-                            <ReactInputMask placeholder="nome" className={styles.texto} type="text" value={nome} onChange={(x) => { setNome(x.target.value); }} />
+                    <div className={styles.info}>
+                        <label className={styles.titulo}>Nome:</label>
+                        <div className={styles.blocoTexto}>
+                            <div className={styles.dado}>
+                                <ReactInputMask placeholder="nome" className={styles.texto} type="text" value={nome} onChange={(x) => { setNome(x.target.value); }} />
+                            </div>
                         </div>
                     </div>
-                    <label className={styles.titulo}>E-mail:</label>
-                    <div className={styles.blocoTexto}>
-                        <div className={styles.dado}>
-                            <ReactInputMask placeholder="e-mail" className={styles.texto} type="text" value={email} onChange={(x) => { setEmail(x.target.value); }} />
+                    <div className={styles.info}>
+                        <label className={styles.titulo}>E-mail:</label>
+                        <div className={styles.blocoTexto}>
+                            <div className={styles.dado}>
+                                <ReactInputMask placeholder="e-mail" className={styles.texto} type="text" value={email} onChange={(x) => { setEmail(x.target.value); }} />
+                            </div>
                         </div>
                     </div>
-                    <label className={styles.titulo}>Telefone:</label>
-                    <div className={styles.blocoTexto}>
-                        <div className={styles.dado}>
-                            <ReactInputMask maskChar={null} mask="(99) 99999-9999" placeholder="telefone" className={styles.texto} type="text" value={telefone} onChange={(x) => { setTelefone(x.target.value); }} />
+                    <div className={styles.info}>
+                        <label className={styles.titulo}>Telefone:</label>
+                        <div className={styles.blocoTexto}>
+                            <div className={styles.dado}>
+                                <ReactInputMask maskChar={null} mask="(99) 99999-9999" placeholder="telefone" className={styles.texto} type="text" value={telefone} onChange={(x) => { setTelefone(x.target.value); }} />
+                            </div>
                         </div>
                     </div>
                     <div className={styles.senhas}>
@@ -75,11 +81,12 @@ function PaginaCadastroAluno() {
                             </div>
                         </div>
                     </div>
-                    <div className={styles.botoes}>
-                        <Botao onClick={Cadastrar} tipo='login'>Cadastrar</Botao>
-                        <Botao onClick={() => { navigate('/paginaLogin') }} tipo='login'>Cancelar</Botao>
-                    </div>
+
                 </form>
+                <div className={styles.botoes}>
+                    <Botao onClick={Cadastrar} tipo='login'>Cadastrar</Botao>
+                    <Botao onClick={() => { navigate('/paginaLogin') }} tipo='login'>Cancelar</Botao>
+                </div>
             </div>
         </div>
     )

@@ -11,22 +11,24 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     width: 60%;
-    height: 90%;
+    height: 100%;
+    gap: 2rem;
 }
 
 .logo {
-    width: 50%;
-    margin-bottom: 7%;
-    margin-right: 7%;
+    width: 23rem;
 }
 
 .formulario {
     display: flex;
     flex-direction: row;
     width: 100%;
-    height: 50%;
-    justify-content: space-evenly;
+    height: auto;
+    justify-content: center;
+    gap: 4rem;
+    padding: 0;
 }
 
 .formsEsquerdo{
@@ -34,7 +36,6 @@
     flex-direction: column;
     width: 100%;
     height: 100%;
-    margin-right: 5%;
 }
 
 .formsDireito{
@@ -44,16 +45,26 @@
     height: 100%;
 }
 
+.info{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    
+}
+
 
 .dado {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.5em;
     width: 100%;
+    height: 100%;
     border-radius: 25px;
     padding: 0.6rem;
-    margin-bottom: 7%;
     border: none;
     outline: none;
     color: white;
@@ -73,8 +84,10 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    height: 9%;
+    height: 2.5rem;
     width: 100%;   
+    margin: 0;
+    padding: 0;
   }
 
 .texto {
@@ -87,38 +100,37 @@
 
 .titulo {
     font-family: 'Inter', sans-serif;
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
+    margin: 2rem 0 0.4rem 0;
 }
 
 .senhas{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
+    gap:2rem;
     width: 100%;
     height: 100%;
 }
 
 .tituloSenha{
+    margin: 2rem 0 0.4rem 0;
     font-family: 'Inter', sans-serif;
-    margin-top: 1.4rem;
-    margin-bottom: 0.4rem;
 }
 
 .senhaSistema{
     display: flex;
     flex-direction: column;
+    justify-content: center;
     width: 100%;
     height: 100%;
 }
-
-
 
 .dadoSenha {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 90%;
+    width: 100%;
+    height: 100%;
     border-radius: 25px;
     padding: 0.6rem;
     border: none;
@@ -126,8 +138,7 @@
     color: white;
     background-color: #ffffff;
     transition: .4s;
-    gap: 1rem;
-    margin-right: 1rem;
+    margin: 0;
 }
 
 .dadoSenha:hover {
@@ -141,7 +152,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 90%;
+    width: 100%;
+    height: 100%;
     border-radius: 25px;
     padding: 0.6rem;
     border: none;
@@ -149,8 +161,7 @@
     color: white;
     background-color: #ffffff;
     transition: .4s;
-    gap: 1rem;
-    margin-left: 1rem;
+    margin: 0;
 }
 
 .dadoSenhaDireito:hover {
@@ -165,16 +176,18 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    height: 25%;
+    height: 2.5rem;
     width: 100%;
+    margin: 0;
   }
 
 .botoes {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: center;
     width: 80%;
-    height: 5%;
+    gap: 3rem;
+    margin-top: 2rem;
 }
 
 @media (max-width: 768px) {
@@ -189,7 +202,7 @@
         align-items: center;
         justify-content: center;
         width: 100vw;
-        height: 100%;
+        height: 100vh;
         background-color: rgb(189, 189, 189,0.9);
     }
     
@@ -197,38 +210,50 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
+        width: 80%;
+        height: 100%;
+        margin: 0;
+        gap: 2rem;
+    }
+    
+    .info{
+        display: flex;
+        align-items: center;
         width: 100%;
         height: 100%;
     }
-    
+
     .logo {
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 95%;
-        margin-right: 3%;
-        margin-bottom: 1rem;
+        width: 15rem;
     }
 
     .formulario {
         display: flex;
         flex-direction: column;
-        width: 80%;
-        height: 70%;
+        width: 100%;
+        height: auto;
+        padding: 0;
+        gap: 0;
     }
     
     .formsEsquerdo{
         display: flex;
         flex-direction: column;
         width: 100%;
-        height: 100%;
+        height: auto;
+        padding: 0;
     }
     
     .formsDireito{
         display: flex;
         flex-direction: column;
         width: 100%;
-        height: 100%;
+        height: auto;
+        padding: 0;
     }
     
     
@@ -238,10 +263,9 @@
         justify-content: center;
         gap: 0.5em;
         width: 100%;
-        height: 1.3rem;
+        height: 100%;
         border-radius: 25px;
         padding: 0.6rem;
-        margin-top: 14px;
         border: none;
         outline: none;
         color: white;
@@ -261,8 +285,9 @@
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        height: 9%;
+        height: 1rem;
         width: 100%;  
+        margin: 0;
       }
     
     .texto {
@@ -275,9 +300,9 @@
     
     .titulo {
         font-family: 'Inter', sans-serif;
-        margin-bottom: 4px;
-        margin-top: 12px;
-        width: 10rem;
+        font-size: 14px;
+        margin: 1.5rem 0 0.8rem 0;
+        width: 100%;
     }
     
     .senhas{
@@ -287,6 +312,9 @@
         flex-direction: column;
         width: 100%;
         height: auto;
+        padding: 0;
+        margin: 0;
+        gap: 0;
     }
     
     .senhaSistema{
@@ -299,13 +327,10 @@
     
     .tituloSenha{
         font-family: 'Inter', sans-serif;
-        margin-bottom: 4px;
-        margin-top: 12px;
-        width: 10rem;
+        font-size: 14px;
+        width: 100%;
+        margin: 1.5rem 0 0.8rem 0;
     }
-    
-    
-    
     
     .dadoSenha {
         display: flex;
@@ -313,10 +338,9 @@
         justify-content: center;
         gap: 0.5em;
         width: 100%;
-        height: 1.3rem;
+        height: 100%;
         border-radius: 25px;
         padding: 0.6rem;
-        margin-top: 14px;
         border: none;
         outline: none;
         color: white;
@@ -337,10 +361,9 @@
         justify-content: center;
         gap: 0.5em;
         width: 100%;
-        height: 1.3rem;
+        height: 100%;
         border-radius: 25px;
         padding: 0.6rem;
-        margin-top: 14px;
         border: none;
         outline: none;
         color: white;
@@ -360,18 +383,19 @@
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        height: 50%;
+        height: 1rem;
         width: 100%;
+        margin: 0;
       }
     
     .botoes {
         position: relative;
         display: flex;
         flex-direction: row;
-        justify-content: space-evenly;
+        justify-content: center;
+        gap: 2rem;
         width: 100%;
-        margin-top: 60px;
-        margin-bottom: 60px;
+        margin: 1rem 0 0 0;
     }
 
 }

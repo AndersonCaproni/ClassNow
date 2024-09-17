@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import LogoPagina from '../../Componentes/ComponenteLogoPagina/LogoPagina'
+import LogoSimples from '../../Componentes/ComponenteLogoSimples/LogoSimples'
 import styles from './_paginaAluno.module.css'
 import EditarAluno from '../../Componentes/ComponenteEditarAluno/EditarAluno'
 import Botao from '../../Componentes/ComponenteBotao/Botao'
@@ -13,6 +14,8 @@ import aluno from '../../Servicos/aluno'
 import { useAlert } from '../../Uteis/useAlert';
 import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 import CloseIcon from '@mui/icons-material/Close';
+import ImagemLogo from '../../Componentes/ComponenteImagemLogo/Imagemlogo'
+import LogoAluno from '../../Componentes/ComponenteLogoAluno/LogoAluno'
 
 function PaginaAluno() {
     const navigate = useNavigate();
@@ -135,8 +138,15 @@ function PaginaAluno() {
                 </div>
             }
             <div className={styles.corpoEsquerdo}>
-                <div className={styles.logo}>
-                    <LogoPagina />
+                <div className={styles.campoLogo}>
+                    <div className={styles.logo}>
+                        <LogoAluno />
+                    </div>
+                </div>
+                <div className={styles.logoSimples}>
+                    <div className={styles.caixaLogo}>
+                        <LogoSimples />
+                    </div>
                 </div>
                 <div className={styles.linha}></div>
                 <div className={styles.opcoes}>
@@ -146,14 +156,19 @@ function PaginaAluno() {
                     <div className={styles.botaoFuncionalidade}>
                         <Botao tipo={segundafuncionalidadeAtiva} onClick={() => { setDadosPagina(true); setPrimeiraFuncionalidadeAtiva('funcionalidade'); setSegundaFuncionalidadeAtiva('funcionalidadeAtiva') }}> <FaBook style={{ marginRight: '8px', marginLeft: '5px' }} />{segundaFuncionalidade}</Botao>
                     </div>
+                    <div className={styles.botaoFuncionalidadeMin}>
+                        <Botao tipo={primeirafuncionalidadeAtiva} onClick={() => { setDadosPagina(false); setPrimeiraFuncionalidadeAtiva('funcionalidadeAtiva'); setSegundaFuncionalidadeAtiva('funcionalidade') }}> <FaBookOpen style={{ marginLeft: '1.4rem' }} /></Botao>
+                    </div>
+                    <div className={styles.botaoFuncionalidadeMin}>
+                        <Botao tipo={segundafuncionalidadeAtiva} onClick={() => { setDadosPagina(true); setPrimeiraFuncionalidadeAtiva('funcionalidade'); setSegundaFuncionalidadeAtiva('funcionalidadeAtiva') }}> <FaBook style={{ marginLeft: '1.4rem' }} /></Botao>
+                    </div>
                 </div>
                 <div className={styles.caixaSair}>
-                    <button onClick={() => { navigate('/paginaLogin') }} className={styles.botaoSair}><BiExit style={{ marginRight: '8px', marginLeft: '5px' }} />Sair</button>
+                    <button onClick={() => { navigate('/paginaLogin') }} className={styles.botaoSair}><BiExit style={{ marginRight: '8px', marginLeft: '0px' }} />Sair</button>
                 </div>
             </div>
             <div className={styles.corpoDireito}>
                 <div className={styles.blocoSuperior}>
-                    <div className={styles.dadosPagina}></div>
                     <div className={styles.perfilContainer}>
                         <div className={styles.perfil}>
                             <PersonOutlineIcon fontSize="large" color="disabled" />

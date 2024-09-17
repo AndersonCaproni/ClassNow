@@ -120,6 +120,132 @@
     cursor:no-drop
 }
 
+@media (max-width: 768px) {
+    .corpo {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+        background-color: rgb(255, 255, 255);
+        width: auto;
+        height: auto;
+        padding: 1rem;
+        z-index: 7;
+    }
+    
+    .excluir {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 2px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+        background-color: rgb(226, 106, 106);
+        width: 30rem;
+        height: 10rem;
+        z-index: 11;
+    }
+    
+    .botoesExcluir{
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-direction: row;
+        width: 100%;
+    }
+    
+    .textoExcluir{
+        text-align: center;
+        font-family: 'Inter', sans-serif;
+        font-size: 1.2rem;
+        font-weight: 400;
+        color: rgb(0, 0, 0);
+        margin-bottom: 1rem;
+    }
+    
+    .descricao{
+        color: #03497B;
+        font-size: 1.3rem;
+        font-family: 'Inter', sans-serif;
+        margin-bottom: 10%;
+    }
+    
+    .formulario {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+    }
+    
+    .dado {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5em;
+        border-radius: 25px;
+        padding: 0.6rem;
+        margin-bottom: 7%;
+        border: none;
+        outline: none;
+        color: rgb(24, 23, 23);
+        background-color: #cacaca;
+        transition: .4s;
+    }
+    
+    .dado:hover {
+        transform: scale(1.009);
+        transition: .4s;
+        border: 1px solid black;
+        box-shadow: rgba(0, 0, 0, 2) 1px 0px 20px;
+    }
+    
+    .texto {
+        border: none;
+        outline: none;
+        width: 100%;
+        color: #000000;
+        background-color: #cacaca;
+    }
+    
+    .titulo {
+        font-family: 'Inter', sans-serif;
+        margin-bottom: 3%;
+    }
+    
+    .botoes {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 1rem;
+        width: 100%;
+        height: 8%;
+        margin-top: 5%;
+    }
+    
+    .escurecer {
+        visibility: visible;
+        opacity: 1;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9); /* Cor de fundo preta com opacidade */
+        z-index: 10; 
+        cursor:no-drop
+    }
+}
+
 @font-face {
     font-family: 'Inter';
     src: url('../../Inter/Inter-VariableFont_slnt\,wght.ttf') format('truetype');

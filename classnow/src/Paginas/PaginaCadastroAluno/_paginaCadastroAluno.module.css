@@ -11,22 +11,35 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     width: 40rem;
     height: 100%;
+    gap: 2rem;
 }
 
 .logo {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
+    width: 23rem;
 }
 
 .formulario {
     display: flex;
     flex-direction: column;
-    width: 90%;
-    height: 70%;
+    width: 100%;
+    height: auto;
+    padding: 0;
+}
+
+.info{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    
 }
 
 .dadoSenha {
@@ -36,7 +49,6 @@
     width: 100%;
     border-radius: 25px;
     padding: 0.6rem;
-    margin-bottom: 7%;
     border: none;
     outline: none;
     color: white;
@@ -56,7 +68,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    height: 40%;
+    height: 2.5rem;
     width: 100%;
   }
 
@@ -70,35 +82,34 @@
 
 .titulo {
     font-family: 'Inter', sans-serif;
-    margin-top: 4%;
-    margin-bottom: 4%;
+    margin: 2rem 0 0.4rem 0;
 }
 
 .senhas{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     width: 100%;
-    height: 20%;
+    height: 100%;
+    gap: 3rem;
 }
 
 .senhaSistema{
     display: flex;
     flex-direction: column;
     width: 100%;
-    margin: 5%;
     height: 100%;
 }
 
 .dado {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.5em;
     width: 100%;
+    height: 100%;
     border-radius: 25px;
     padding: 0.6rem;
-    margin-bottom: 7%;
     border: none;
     outline: none;
     color: white;
@@ -110,7 +121,7 @@
     transform: scale(1.03);
     transition: .4s;
     border: 1px solid black;
-    box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 10px 1px;
+    box-shadow: #00000080 1px 1px 10px 1px;
 }
 
 .blocoTexto{
@@ -118,17 +129,19 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    height: 9%;
-    width: 100%;
+    height: 2.5rem;
+    width: 100%;   
+    margin: 0;
+    padding: 0;
   }
 
 .botoes {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: center;
+    gap: 3rem;
     width: 100%;
-    height: 5%;
-    margin-top: 8%;
+    margin-top: 2rem;
 }
 
 @media (max-width: 768px) {
@@ -144,31 +157,40 @@
         justify-content: center;
         width: 100vw;
         height: 100vh;
-        background-color: rgb(189, 189, 189,0.9);
     }
     
     .blocoLogin {
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 100%;
+        justify-content: center;
+        width: 80%;
         height: 100%;
+        gap: 2rem;
+        margin: 0;
     }
     
     .logo {
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 95%;
-        margin-right: 3%;
-        margin-bottom: 1rem;
+        width: 15rem;
+        margin: 0;
     }
     
     .formulario {
         display: flex;
         flex-direction: column;
-        width: 80%;
-        height: 70%;
+        width: 100%;
+        height: auto;
+        padding: 0;
+    }
+
+    .info{
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 100%;
     }
     
     .dadoSenha {
@@ -176,7 +198,7 @@
         align-items: center;
         justify-content: center;
         width: 100%;
-        height: 1.3rem;
+        height: 100%;
         border-radius: 25px;
         padding: 0.6rem;
         border: none;
@@ -184,7 +206,7 @@
         color: white;
         background-color: #ffffff;
         transition: .4s;
-        margin: 0 0 6px 0;
+        margin: 0;
     }
     
     .dadoSenha:hover {
@@ -199,9 +221,10 @@
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        height: 50%;
+        height: 1rem;
         width: 100%;
-      }
+        margin: 0;
+    }
     
     .texto {
         font-family: 'Inter', sans-serif;
@@ -209,13 +232,15 @@
         outline: none;
         width: 100%;
         color: #000000;
+        margin: 0;
     }
     
     .titulo {
+        position:relative;
         font-family: 'Inter', sans-serif;
-        margin-bottom: 4px;
-        margin-top: 12px;
-        width: 10rem;
+        width: 100%;
+        height: 100%;
+        margin: 1.8rem 0 0.7rem 0;
     }
     
     .senhas{
@@ -224,7 +249,9 @@
         align-items: center;
         flex-direction: column;
         width: 100%;
-        height: auto;
+        height: 100%;
+        gap: 0;
+        margin: 0;
     }
     
     .senhaSistema{
@@ -241,15 +268,15 @@
         justify-content: center;
         gap: 0.5em;
         width: 100%;
-        height: 1.3rem;
+        height: 100%;
         border-radius: 25px;
         padding: 0.6rem;
-        margin-top: 14px;
         border: none;
         outline: none;
         color: white;
         background-color: #ffffff;
         transition: .4s;
+        margin: 0;
     }
     
     .dado:hover {
@@ -264,17 +291,19 @@
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        height: 9%;
+        height: 1rem;
         width: 100%;
+        margin: 0;
       }
     
     .botoes {
         position: relative;
         display: flex;
         flex-direction: row;
-        justify-content: space-evenly;
+        justify-content: center;
+        gap: 2rem;
         width: 100%;
-        margin-top: 60px;
+        margin: 1.8rem 0 0 0 ;
     }
 
 }

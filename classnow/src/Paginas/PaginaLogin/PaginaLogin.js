@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Botao from '../../Componentes/ComponenteBotao/Botao';
-import LogoCompleto from '../../Componentes/ComponenteLogoCompleta/LogoCompleta';
+import ImagemLogo from '../../Componentes/ComponenteImagemLogo/Imagemlogo';
 import styles from './_paginaLogin.module.css'
 import { useAlert } from '../../Uteis/useAlert';
 import { useNavigate } from 'react-router-dom';
@@ -76,7 +76,7 @@ function PaginaLogin() {
                 <div className={styles.corpo}>
                     <div className={styles.blocoLogin}>
                     <div className={styles.logo}>
-                        <LogoCompleto />
+                        <ImagemLogo />
                     </div>
                         <form className={styles.formulario}>
                             <label className={styles.titulo}>E-mail:</label>
