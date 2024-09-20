@@ -21,77 +21,105 @@ function EditarProfessor({ children, dados, enviarEstado }) {
 
     const AlterarProfessor = async () => {
         try {
-            if (trocouNome) {
-                if (trocouTelefone) {
-                    if (trocouEstado) {
-                        if (trocouCidade) {
+            if (trocouNome && nome !== "") {
+                if (trocouTelefone && telefone !== "") {
+                    if (trocouEstado && estado !== "") {
+                        if (trocouCidade && cidade !== "") {
                             await professor.Atualizar(dados.professorID, nome, telefone, estado, cidade)
+                            alert.handleAlert(`Professor atualizado com sucesso!`, "success")
+                            enviarEstado(false)
                         } else {
                             await professor.Atualizar(dados.professorID, nome, telefone, estado, dados.cidade)
+                            alert.handleAlert(`Professor atualizado com sucesso!`, "success")
+                            enviarEstado(false)
                         }
                     }
                     else {
-                        if (trocouCidade) {
+                        if (trocouCidade && cidade !== "") {
                             await professor.Atualizar(dados.professorID, nome, telefone, dados.estado, cidade)
+                            alert.handleAlert(`Professor atualizado com sucesso!`, "success")
+                            enviarEstado(false)
                         } else {
                             await professor.Atualizar(dados.professorID, nome, telefone, dados.estado, dados.cidade)
+                            alert.handleAlert(`Professor atualizado com sucesso!`, "success")
+                            enviarEstado(false)
                         }
                     }
                 }
                 else {
-                    if (trocouEstado) {
-                        if (trocouCidade) {
+                    if (trocouEstado && estado !== "") {
+                        if (trocouCidade && cidade !== "") {
                             await professor.Atualizar(dados.professorID, nome, dados.telefone, estado, cidade)
+                            alert.handleAlert(`Professor atualizado com sucesso!`, "success")
+                            enviarEstado(false)
                         } else {
                             await professor.Atualizar(dados.professorID, nome, dados.telefone, estado, dados.cidade)
+                            alert.handleAlert(`Professor atualizado com sucesso!`, "success")
+                            enviarEstado(false)
                         }
                     }
                     else {
-                        if (trocouCidade) {
+                        if (trocouCidade && cidade !== "") {
                             await professor.Atualizar(dados.professorID, nome, dados.telefone, dados.estado, cidade)
+                            alert.handleAlert(`Professor atualizado com sucesso!`, "success")
+                            enviarEstado(false)
                         } else {
                             await professor.Atualizar(dados.professorID, nome, dados.telefone, dados.estado, dados.cidade)
+                            alert.handleAlert(`Professor atualizado com sucesso!`, "success")
+                            enviarEstado(false)
                         }
                     }
                 }
             }
             else {
-                if (trocouTelefone) {
-                    if (trocouEstado) {
-                        if (trocouCidade) {
+                if (trocouTelefone && telefone !== "") {
+                    if (trocouEstado && estado !== "") {
+                        if (trocouCidade && cidade !== "") {
                             await professor.Atualizar(dados.professorID, dados.nome, telefone, estado, cidade)
+                            alert.handleAlert(`Professor atualizado com sucesso!`, "success")
+                            enviarEstado(false)
                         } else {
                             await professor.Atualizar(dados.professorID, dados.nome, telefone, estado, dados.cidade)
+                            alert.handleAlert(`Professor atualizado com sucesso!`, "success")
+                            enviarEstado(false)
                         }
                     }
                     else {
-                        if (trocouCidade) {
+                        if (trocouCidade && cidade !== "") {
                             await professor.Atualizar(dados.professorID, dados.nome, telefone, dados.estado, cidade)
+                            alert.handleAlert(`Professor atualizado com sucesso!`, "success")
+                            enviarEstado(false)
                         } else {
                             await professor.Atualizar(dados.professorID, dados.nome, telefone, dados.estado, dados.cidade)
+                            alert.handleAlert(`Professor atualizado com sucesso!`, "success")
+                            enviarEstado(false)
                         }
                     }
                 }
                 else {
-                    if (trocouEstado) {
-                        if (trocouCidade) {
+                    if (trocouEstado && estado !== "") {
+                        if (trocouCidade && cidade !== "") {
                             await professor.Atualizar(dados.professorID, dados.nome, dados.telefone, estado, cidade)
+                            alert.handleAlert(`Professor atualizado com sucesso!`, "success")
+                            enviarEstado(false)
                         } else {
                             await professor.Atualizar(dados.professorID, dados.nome, dados.telefone, estado, dados.cidade)
+                            alert.handleAlert(`Professor atualizado com sucesso!`, "success")
+                            enviarEstado(false)
                         }
                     }
                     else {
-                        if (trocouCidade) {
+                        if (trocouCidade && cidade !== "") {
                             await professor.Atualizar(dados.professorID, dados.nome, dados.telefone, dados.estado, cidade)
-                        } else {
-                            await professor.Atualizar(dados.professorID, dados.nome, dados.telefone, dados.estado, dados.cidade)
+                            alert.handleAlert(`Professor atualizado com sucesso!`, "success")
+                            enviarEstado(false)
+                        }
+                        else {
+                            alert.handleAlert(`Voce não está alterando nenhuma informação!`, "danger")
                         }
                     }
                 }
             }
-
-            alert.handleAlert(`Professor atualizado com sucesso!`, "success")
-            enviarEstado(false)
         }
         catch (error) {
             alert.handleAlert(`Ops! Tivemos o seguinte problema na atualização: \n${error}\n tente novamente!`, "danger")
@@ -143,7 +171,7 @@ function EditarProfessor({ children, dados, enviarEstado }) {
                     <div className={styles.dado}>
                         <input placeholder="estado (Deixe em branco para não alterar)" className={styles.texto} type="text" value={estado} onChange={(x) => { setEstado(x.target.value); setTrocouEstado(true) }} />
                     </div>
-                    <label className={styles.Cidade}>Cidade:</label>
+                    <label className={styles.titulo}>Cidade:</label>
                     <div className={styles.dado}>
                         <input placeholder="cidade (Deixe em branco para não alterar)" className={styles.texto} type="text" value={cidade} onChange={(x) => { setCidade(x.target.value); setTrocouCidade(true) }} />
                     </div>

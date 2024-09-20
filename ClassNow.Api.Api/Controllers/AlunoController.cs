@@ -134,6 +134,31 @@ public class AlunoController : ControllerBase
         }
     }
 
+    [HttpPut]
+    [Route("obterInfo/{alunoID}")]
+    public async Task<IActionResult> ObterInfo([FromRoute] int alunoID)
+    {
+        try
+        {
+
+            var alunoExistente = await _alunoAplicacao.ObterAsync(alunoID);
+
+            var alunoLogado = new AlunoLogado()
+            {
+                AlunoID = alunoExistente.AlunoID,
+                Nome = alunoExistente.Nome,
+                Email = alunoExistente.Email,
+                Telefone = alunoExistente.Telefone,
+            };
+
+            return Ok(alunoLogado);
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(ex.Message);
+        }
+    }
+
     [HttpPost]
     [Route("adicionarAula/{alunoID}/{cursoID}")]
     public async Task<IActionResult> AdicionarAula([FromRoute] int alunoID, [FromRoute] int cursoID)

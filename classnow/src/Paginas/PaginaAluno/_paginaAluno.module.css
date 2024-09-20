@@ -147,6 +147,7 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
     transition: opacity 0.3s ease, visibility 0.3s ease;
     padding: 2%;
+    z-index: 50;
     cursor: default;
 }
 
@@ -214,13 +215,13 @@
 
 
 .box{
-    width: 13rem;
-    height: 14rem;
+    width: auto;
+    height: auto;
     background-color: rgb(255, 255, 255);
     margin: 1.5rem;
     border-radius: 7px;
     box-shadow: rgb(153, 148, 148) 1px 1px 12px;
-    padding: 1rem 3% 3% 3%;
+    padding: 1rem ;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -228,23 +229,24 @@
 }
 
 .boxAula{
-    width: 13rem;
-    height: 18rem;
+    width: auto;
+    height: auto;
     background-color: rgb(255, 255, 255);
     margin: 2rem;
     border-radius: 7px;
     box-shadow: rgb(153, 148, 148) 1px 1px 12px;
-    padding: 2rem 3% 2% 3%;
+    padding: 1rem;
     display: flex;
     align-items: center;
     flex-direction: column;
     font-family: 'Quicksand', sans-serif;
 }
 
-.categoriaCurso{
+.categoriaCurso {
     text-transform: uppercase;
     width: 15rem;
-    min-height: 1rem;
+    min-height: 1.3rem;
+    max-height: 1.3rem;
     background-color: #38afff;
     border-radius: 5px;
     box-shadow: rgb(153, 148, 148) 1px 1px 12px;
@@ -255,12 +257,26 @@
     font-size: 14px;
     margin-top: 0.5rem;
     margin-bottom: 1.7rem;
+    overflow-x: scroll;
+    white-space: nowrap;
 }
 
-.categoriaAula{
+.categoriaCurso::-webkit-scrollbar {
+    display: auto;
+    height: 3px;
+}
+
+.categoriaCurso::-webkit-scrollbar-thumb {
+    border-radius: 2px;
+    background-color: rgb(202, 202, 202);
+    cursor: pointer;
+}
+
+.categoriaAula {
     text-transform: uppercase;
     width: 15rem;
-    min-height: 1rem;
+    min-height: 1.3rem;
+    max-height: 1.3rem;
     background-color: #38afff;
     border-radius: 5px;
     box-shadow: rgb(153, 148, 148) 1px 1px 12px;
@@ -269,13 +285,28 @@
     justify-content: center;
     align-items: center;
     font-size: 14px;
+    margin-top: 0.5rem;
     margin-bottom: 1.7rem;
+    overflow-x: scroll;
+    white-space: nowrap;
+}
+
+.categoriaAula::-webkit-scrollbar {
+    display: auto;
+    height: 3px;
+}
+
+.categoriaAula::-webkit-scrollbar-thumb {
+    border-radius: 2px;
+    background-color: rgb(202, 202, 202);
+    cursor: pointer;
 }
 
 .descricaoCurso{
     display: flex;
     width: 15rem;
     min-height: 4rem;
+    max-height: 4rem;
     font-size: 13px;
     overflow-y:scroll;
     margin-bottom: 1rem;
@@ -293,10 +324,25 @@
 }
 
 .professorCurso{
+    display: flex;
+    align-items: center;
     width: 15rem;
-    min-height: 3rem;
     margin-bottom: 0.6rem;
+    min-height: 2.8rem;
+    max-height: 2.8rem;
     font-size: 13px;
+    overflow-y:scroll;
+}
+
+.professorCurso::-webkit-scrollbar{
+    display: auto;
+    width: 3px;
+}
+
+.professorCurso::-webkit-scrollbar-thumb{
+    border-radius: 2px;
+    background-color: rgb(202, 202, 202);
+    cursor: pointer;
 }
 
 .valorComprar{
@@ -801,10 +847,11 @@
         font-family: 'Quicksand', sans-serif;
     }
     
-    .categoriaCurso{
+    .categoriaCurso {
         text-transform: uppercase;
-        width: 90%;
-        min-height: 1rem;
+        width: 15rem;
+        min-height: 1.3rem;
+        max-height: 1.3rem;
         background-color: #38afff;
         border-radius: 5px;
         box-shadow: rgb(153, 148, 148) 1px 1px 12px;
@@ -815,12 +862,26 @@
         font-size: 14px;
         margin-top: 0.5rem;
         margin-bottom: 1.7rem;
+        overflow-x: scroll;
+        white-space: nowrap;
     }
-    
-    .categoriaAula{
+
+    .categoriaCurso::-webkit-scrollbar {
+        display: auto;
+        height: 3px;
+    }
+
+    .categoriaCurso::-webkit-scrollbar-thumb {
+        border-radius: 2px;
+        background-color: rgb(202, 202, 202);
+        cursor: pointer;
+    }
+
+    .categoriaAula {
         text-transform: uppercase;
-        width: 90%;
-        min-height: 1rem;
+        width: 15rem;
+        min-height: 1.3rem;
+        max-height: 1.3rem;
         background-color: #38afff;
         border-radius: 5px;
         box-shadow: rgb(153, 148, 148) 1px 1px 12px;
@@ -829,7 +890,21 @@
         justify-content: center;
         align-items: center;
         font-size: 14px;
+        margin-top: 0.5rem;
         margin-bottom: 1.7rem;
+        overflow-x: scroll;
+        white-space: nowrap;
+    }
+
+    .categoriaAula::-webkit-scrollbar {
+        display: auto;
+        height: 3px;
+    }
+
+    .categoriaAula::-webkit-scrollbar-thumb {
+        border-radius: 2px;
+        background-color: rgb(202, 202, 202);
+        cursor: pointer;
     }
     
     .descricaoCurso{
@@ -1027,6 +1102,42 @@
         width: 20rem;
         height: 15rem;
     }
+
+    
+.blocoNaoCurso{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 7rem;
+    height: 7rem;
+    border-style:solid;
+    border-color: #686868;
+    border-radius: 90%;
+    border-width: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+
+.blocoNaoCursoTexto{
+    font-family: 'Inter', sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #686868;
+    
+}
+
+.alertaNaoCurso{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 20rem;
+    height: 15rem;
+}
 
 }
 

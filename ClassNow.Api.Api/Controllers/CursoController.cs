@@ -30,17 +30,14 @@ public class CursoController : ControllerBase
     {
         try
         {
-
             Curso curso = new Curso(cursoCriar.Categoria, cursoCriar.Descricao, cursoCriar.Valor, cursoCriar.ProfessorID);
 
             int cursoID = await _cursoAplicacao.CriarAsync(curso);
-            Console.WriteLine("OOSOOSOSSOOO",curso);
             return Ok(cursoID);
 
         }
         catch (Exception ex)
         {
-            Console.WriteLine("SASASASASA",ex.Message);
             return BadRequest(ex.Message);
         }
     }

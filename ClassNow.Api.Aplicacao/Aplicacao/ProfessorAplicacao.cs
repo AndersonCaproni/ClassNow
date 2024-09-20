@@ -73,10 +73,7 @@ public class ProfessorAplicacao : IProfessorAplicacao
     public async Task<IEnumerable<AulaProfessor>> ListarAulasAsync(int professorID)
     {
         var lista = await _professorRepositorio.ListarAulasAsync(professorID);
-
-        if (lista == null || lista.Count() == 0)
-            throw new Exception("Nenhuma aula encontrada em nosso sistema!");
-
+        
         return lista;
     }
 

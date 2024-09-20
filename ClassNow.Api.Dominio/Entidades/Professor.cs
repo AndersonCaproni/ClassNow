@@ -51,7 +51,6 @@ public class Professor
             if (string.IsNullOrEmpty(value))
                 throw new Exception("O telefone do professor é obrigatório.");
 
-
             if (value.Length != 15)
                 throw new Exception("O telefone do professor é inválido.");
 

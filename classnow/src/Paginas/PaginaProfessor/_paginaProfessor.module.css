@@ -1,703 +1,762 @@
 @media (min-width: 769px) {
 
-.corpo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-    position: absolute;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgb(255, 255, 255);
-}
-
-.corpoEsquerdo {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    width: 17%;
-    height: 100%;
-    background-color: #11A3E1;
-    box-shadow: rgb(0, 0, 0) 1px 1px 8px;
-    z-index: 1;
-}
-
-.corpoDireito {
-    width: 100%;
-    height: 100%;
-}
-
-.blocoSuperior {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    height: 8%;
-    background-color: #03497B;
-}
-
-.blocoInferior {
-    width: 90%;
-    height: 83%;
-    background-color: rgb(255, 255, 255);
-    display: flex;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    overflow-y: scroll;
-    padding-top: 5%;
-    padding-left: 10%;
-}
-
-.blocoInferior::-webkit-scrollbar {
-    display: auto;
-    width: 10px;
-}
-
-.blocoInferior::-webkit-scrollbar-thumb {
-    border-radius: 20px;
-    background-color: rgb(7, 4, 44);
-}
-
-.botaoMais{
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: auto;
-    height: auto;
-    bottom: 3%;
-    right: 2%;
-    width: 3rem;
-    height: 3rem;
-}
-
-.blocoNaoCurso{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 7rem;
-    height: 7rem;
-    border-style:solid;
-    border-color: #686868;
-    border-radius: 90%;
-    border-width: 0.5rem;
-    margin-bottom: 1rem;
-}
-
-.blocoNaoAulaTexto{
-    font-family: 'Inter', sans-serif;
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #686868;
-    
-}
-
-.blocoNaoCursoTexto{
-    font-family: 'Inter', sans-serif;
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #686868;
-    
-}
-
-.alertaNaoCurso{
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    top: 50%;
-    left: 50%;
-    transform: translate(-70%,-80%);
-    width: 20rem;
-    height: 15rem;
-}
-
-.boxCurso{
-    width: 13rem;
-    height: 14rem;
-    background-color: rgb(255, 255, 255);
-    margin: 1rem;
-    border-radius: 7px;
-    box-shadow: rgb(153, 148, 148) 1px 1px 12px;
-    padding: 1rem 3% 3% 3%;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    font-family: 'Quicksand', sans-serif;
-}
-
-
-.categoriaCurso{
-    text-transform: uppercase;
-    width: 15rem;
-    min-height: 1rem;
-    background-color: #38afff;
-    border-radius: 5px;
-    box-shadow: rgb(153, 148, 148) 1px 1px 12px;
-    padding: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 14px;
-    margin-top: 0.5rem;
-    margin-bottom: 1.7rem;
-}
-
-.descricaoCurso{
-    display: flex;
-    width: 15rem;
-    min-height: 6rem;
-    max-height: 6rem;
-    font-size: 13px;
-    overflow-y:scroll;
-    margin-bottom: 1rem;
-}
-
-.descricaoCurso::-webkit-scrollbar{
-    display: auto;
-    width: 3px;
-}
-
-.descricaoCurso::-webkit-scrollbar-thumb{
-    border-radius: 2px;
-    background-color: rgb(202, 202, 202);
-    cursor: pointer;
-}
-
-.botaoComprar{
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    width: 100%;
-    margin-bottom: 0.5rem;
-}
-
-.valor{
-    text-align: center;
-    width: 100%;
-    font-size: 12px;
-}
-
-.confirmarCancelamentoCurso {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
-    background-color: rgb(255, 255, 255);
-    width: 30rem;
-    height: 30rem;
-    z-index: 11
-}
-
-.confirmarCancelamentoAula {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
-    background-color: rgb(255, 255, 255);
-    width: 30rem;
-    height: 33rem;
-    z-index: 11
-}
-
-.dadosDoCursoConfirmar{
-    font-family: 'Inter', sans-serif;
-    font-size: 2rem;
-    margin: 0rem 1.5rem 1.5rem 1.5rem ;
-    color: #03497B;
-}
-
-.dadosDaAulaConfirmar{
-    font-family: 'Inter', sans-serif;
-    font-size: 2rem;
-    margin: 0rem 1.5rem 1.5rem 1.5rem ;
-    color: #03497B;
-}
-
-.categoriaCursoConfirmar{
-    width: 25rem;
-    min-height: 1rem;
-    border-radius: 5px;
-    padding: 5px;
-    font-size: 0.9rem;
-    margin-bottom: 1.7rem;
-}
-
-.categoriaAulaConfirmar{
-    width: 25rem;
-    min-height: 1rem;
-    border-radius: 5px;
-    padding: 5px;
-    font-size: 0.9rem;
-    margin-bottom: 1.7rem;
-}
-
-.nomeDescricaoCursoConfirmar{
-    width: 25rem;
-    margin-bottom: 0.5rem;
-}
-
-.nomeDescricaoAulaConfirmar{
-    width: 25rem;
-    margin-bottom: 0.5rem;
-}
-
-.descricaoCursoConfirmar{
-    display: flex;
-    width: 25rem;
-    min-height: 5rem;
-    max-height: 5rem;
-    font-size: 0.9rem;
-    overflow-y:scroll;
-    margin-bottom: 1rem;
-}
-
-.descricaoCursoConfirmar::-webkit-scrollbar{
-    display: auto;
-    width: 3px;
-}
-
-.descricaoCursoConfirmar::-webkit-scrollbar-thumb{
-    border-radius: 2px;
-    background-color: rgb(202, 202, 202);
-    cursor: pointer;
-}
-
-.descricaoAulaConfirmar{
-    display: flex;
-    width: 25rem;
-    min-height: 5rem;
-    max-height: 5rem;
-    font-size: 0.9rem;
-    overflow-y:scroll;
-    margin-bottom: 1rem;
-}
-
-.descricaoAulaConfirmar::-webkit-scrollbar{
-    display: auto;
-    width: 3px;
-}
-
-.descricaoAulaConfirmar::-webkit-scrollbar-thumb{
-    border-radius: 2px;
-    background-color: rgb(202, 202, 202);
-    cursor: pointer;
-}
-
-.valorCursoConfirmar{
-    width: 25rem;
-    min-height: 3rem;
-    margin-bottom: 0.6rem;
-    font-size: 0.9rem;
-}
-
-.alunoConfirmar{
-    width: 25rem;
-    min-height: 3rem;
-    margin-bottom: 0.6rem;
-    font-size: 0.9rem;
-}
-
-.botoesCursoCancelar{
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    flex-direction: row;
-    width: 25rem;
-    margin-top: 1rem;
-}
-
-.boxAula{
-    width: 13rem;
-    height: 22rem;
-    background-color: rgb(255, 255, 255);
-    margin: 1rem;
-    border-radius: 7px;
-    box-shadow: rgb(153, 148, 148) 1px 1px 12px;
-    padding: 1rem 3% 3% 3%;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    font-family: 'Quicksand', sans-serif;
-}
-
-.categoriaAula{
-    text-transform: uppercase;
-    width: 15rem;
-    min-height: 1rem;
-    background-color: #38afff;
-    border-radius: 5px;
-    box-shadow: rgb(153, 148, 148) 1px 1px 12px;
-    padding: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 14px;
-    margin-top: 0.5rem;
-    margin-bottom: 1.7rem;
-}
-
-.descricaoAula{
-    display: flex;
-    width: 15rem;
-    min-height: 7rem;
-    max-height: 7rem;
-    font-size: 13px;
-    overflow-y:scroll;
-    margin-bottom: 1rem;
-}
-
-.descricaoAula::-webkit-scrollbar{
-    display: auto;
-    width: 3px;
-}
-
-.descricaoAula::-webkit-scrollbar-thumb{
-    border-radius: 2px;
-    background-color: rgb(202, 202, 202);
-    cursor: pointer;
-}
-
-.alunoAula{
-    width: 13rem;
-    min-height: 3rem;
-    font-size: 0.7rem;
-}
-
-.botaoCriar {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    top: 93%;
-    left: 94%;
-    transform: translate(-50%, -50%);
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
-    background-color: rgb(40, 163, 24);
-    width: 7%;
-    height: 6%;
-    z-index: 7;
-}
-
-.campoLogo{
-    display: flex;
-    align-items: center;
-    max-width: 11rem;
-    max-height: 3.5rem;
-}
-.logo{
-    width: 13rem;
-    margin: 8%;
-}
-
-.logoSimples{
-    position: absolute;
-    opacity: 0;
-    width:0;
-    height: 0;
-}
-
-.linha {
-    background-color: rgb(255, 255, 255);
-    width: 100%;
-    height: 0.4%;
-}
-
-.opcoes {
-    width: 100%;
-    height: 92.1%;
-}
-
-.botaoFuncionalidade{
-    width: 100%;
-    height: 4rem;
-}
-
-.botaoFuncionalidadeMin{
-    position: absolute;
-    opacity: 0;
-    margin: 0;
-    width: 0;
-    height: 0;
-}
-
-.perfilContainer {
-    margin-left: 95%;
-}
-
-.perfil {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 2.5rem;
-    height: 2.5rem;
-    background-color: rgb(201, 210, 230);
-    border-radius: 100%;
-    cursor: pointer;
-}
-
-.perfil:hover .infoPerfil {
-    visibility: visible;
-    opacity: 1;
-}
-
-.infoPerfil {
-    visibility: hidden;
-    opacity: 0;
-    position: absolute;
-    min-width: 20rem;
-    top: 5%;
-    right: 4.2%;
-    background-color: rgb(255, 255, 255);
-    border-radius: 10px 0px 10px 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-    padding: 2%;
-    cursor: default;
-}
-
-.caixaIcone {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-}
-
-.icone {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 2.5rem;
-    height: 2.5rem;
-    background-color: rgb(225, 226, 246);
-    border-radius: 90%;
-    border: 1px solid #000000;
-    cursor: pointer;
-}
-
-.icone:hover {
-    transform: scale(1.04);
-    background-color: rgb(163, 185, 227);
-}
-
-.dadosPerfil {
-    cursor: text;
-}
-
-.dadosPerfil:hover {
-    transform: scale(1.02);
-}
-
-.botaoEditar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    margin-top: 3rem;
-    height: 1.5rem;
-
-}
-
-.escurecer {
-    visibility: visible;
-    opacity: 1;
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); 
-    z-index: 10; 
-    cursor:no-drop
-}
-
-.linhaPerfil {
-    width: 90%;
-}
-
-.blocoCriar {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
-    background-color: rgb(255, 255, 255);
-    width: 30%;
-    height: 75%;
-    z-index: 19;
-}
-
-.descricao{
-    color: #03497B;
-    font-size: 1.3rem;
-    font-family: 'Inter', sans-serif;
-    margin-bottom: 10%;
-}
-
-.formulario {
-    display: flex;
-    flex-direction: column;
-    width: 90%;
-}
-
-.dado {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5em;
-    border-radius: 25px;
-    padding: 0.6rem;
-    margin-bottom: 7%;
-    border: none;
-    outline: none;
-    color: rgb(54, 52, 52);
-    background-color: #cacaca;
-    transition: .4s;
-}
-
-.dado:hover {
-    transform: scale(1.009);
-    transition: .4s;
-    border: 1px solid black;
-    box-shadow: rgba(0, 0, 0, 2) 1px 0px 20px;
-}
-
-.texto {
-    border: none;
-    outline: none;
-    width: 100%;
-    color: #000000;
-    background-color: #cacaca;
-}
-
-.titulo {
-    font-family: 'Inter', sans-serif;
-    margin-bottom: 3%;
-}
-
-.botoes {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    width: 100%;
-    height: 6%;
-    margin-top: 5%;
-}
-
-.caixaSair{
-    display: flex;
-    align-items: end;
-    width: 100%;
-    height: 100%;
-}
-
-.botaoSair{
-    display: flex;
-    align-items: center;
-    justify-content:left;
-    background-color: #11A3E1;
-    border-style: none;
-    transition: 0.2s;
-    color: #ffffff;
-    font-size: 1rem;
-    cursor: pointer;
-    margin-bottom: 5%;
-}
-
-.botaoSair:hover{
-    color: #03497B;
-}
-
-.pagin{
-    width: 90%;
-    height: 90%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.loader {
-    --dim: 3rem;
-    width: var(--dim);
-    height: var(--dim);
-    position: relative;
-    animation: spin988 2s linear infinite;
-  }
-  
-  .loader .circle {
-    --color: #000000;
-    --dim: 1.2rem;
-    width: var(--dim);
-    height: var(--dim);
-    background-color: var(--color);
-    border-radius: 50%;
-    position: absolute;
-  }
-  
-  .loader .circle:nth-child(1) {
-    top: 0;
-    left: 0;
-  }
-  
-  .loader .circle:nth-child(2) {
-    top: 0;
-    right: 0;
-  }
-  
-  .loader .circle:nth-child(3) {
-    bottom: 0;
-    left: 0;
-  }
-  
-  .loader .circle:nth-child(4) {
-    bottom: 0;
-    right: 0;
-  }
-  
-  @keyframes spin988 {
-    0% {
-      transform: scale(1) rotate(0);
+    .corpo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgb(255, 255, 255);
     }
-  
-    20%, 25% {
-      transform: scale(1.3) rotate(90deg);
+
+    .corpoEsquerdo {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width: auto;
+        padding: 0 auto;
+        height: 100%;
+        background-color: #11A3E1;
+        box-shadow: rgb(0, 0, 0) 1px 1px 8px;
+        z-index: 1;
     }
-  
-    45%, 50% {
-      transform: scale(1) rotate(180deg);
+
+    .corpoDireito {
+        width: 100%;
+        height: 100%;
     }
-  
-    70%, 75% {
-      transform: scale(1.3) rotate(270deg);
+
+    .blocoSuperior {
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        width: 100%;
+        height: 3.5rem;
+        background-color: #03497B;
     }
-  
-    95%, 100% {
-      transform: scale(1) rotate(360deg);
+
+    .blocoInferior {
+        width: 90%;
+        height: 83%;
+        background-color: rgb(255, 255, 255);
+        display: flex;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        overflow-y: scroll;
+        padding-top: 5%;
+        padding-left: 10%;
     }
-  }
+
+    .blocoInferior::-webkit-scrollbar {
+        display: auto;
+        width: 10px;
+    }
+
+    .blocoInferior::-webkit-scrollbar-thumb {
+        border-radius: 20px;
+        background-color: rgb(7, 4, 44);
+    }
+
+    .botaoMais {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: auto;
+        height: auto;
+        bottom: 3%;
+        right: 2%;
+        width: 3rem;
+        height: 3rem;
+    }
+
+    .blocoNaoCurso {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 7rem;
+        height: 7rem;
+        border-style: solid;
+        border-color: #686868;
+        border-radius: 90%;
+        border-width: 0.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .blocoNaoAulaTexto {
+        font-family: 'Inter', sans-serif;
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #686868;
+
+    }
+
+    .blocoNaoCursoTexto {
+        font-family: 'Inter', sans-serif;
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #686868;
+
+    }
+
+    .alertaNaoCurso {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        top: 50%;
+        left: 50%;
+        transform: translate(-70%, -80%);
+        width: 20rem;
+        height: 15rem;
+    }
+
+    .boxCurso {
+        width: auto;
+        height: auto;
+        background-color: rgb(255, 255, 255);
+        margin: 1rem;
+        border-radius: 7px;
+        box-shadow: rgb(153, 148, 148) 1px 1px 12px;
+        padding: 1rem;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        font-family: 'Quicksand', sans-serif;
+    }
+
+
+    .categoriaCurso {
+        text-transform: uppercase;
+        width: 15rem;
+        min-height: 1.3rem;
+        max-height: 1.3rem;
+        background-color: #38afff;
+        border-radius: 5px;
+        box-shadow: rgb(153, 148, 148) 1px 1px 12px;
+        padding: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 14px;
+        margin-top: 0.5rem;
+        margin-bottom: 1.7rem;
+        overflow-x: scroll;
+        white-space: nowrap;
+    }
+
+    .categoriaCurso::-webkit-scrollbar {
+        display: auto;
+        height: 3px;
+    }
+
+    .categoriaCurso::-webkit-scrollbar-thumb {
+        border-radius: 2px;
+        background-color: rgb(202, 202, 202);
+        cursor: pointer;
+    }
+
+    .descricaoCurso {
+        display: flex;
+        width: 15rem;
+        min-height: 6rem;
+        max-height: 6rem;
+        font-size: 13px;
+        overflow-y: scroll;
+        margin-bottom: 1rem;
+    }
+
+    .descricaoCurso::-webkit-scrollbar {
+        display: auto;
+        width: 3px;
+    }
+
+    .descricaoCurso::-webkit-scrollbar-thumb {
+        border-radius: 2px;
+        background-color: rgb(202, 202, 202);
+        cursor: pointer;
+    }
+
+    .botaoComprar {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+
+    .valor {
+        text-align: center;
+        width: 100%;
+        font-size: 12px;
+    }
+
+    .confirmarCancelamentoCurso {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+        background-color: rgb(255, 255, 255);
+        width: 30rem;
+        height: 30rem;
+        z-index: 11
+    }
+
+    .confirmarCancelamentoAula {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+        background-color: rgb(255, 255, 255);
+        width: auto;
+        height: auto;
+        padding: 2rem;
+        z-index: 11
+    }
+
+    .dadosDoCursoConfirmar {
+        font-family: 'Inter', sans-serif;
+        font-size: 2rem;
+        margin: 0rem 1.5rem 1.5rem 1.5rem;
+        color: #03497B;
+    }
+
+    .dadosDaAulaConfirmar {
+        font-family: 'Inter', sans-serif;
+        font-size: 2rem;
+        margin: 0rem 1.5rem 1.5rem 1.5rem;
+        color: #03497B;
+    }
+
+    .categoriaCursoConfirmar {
+        width: 25rem;
+        min-height: 1rem;
+        border-radius: 5px;
+        padding: 5px;
+        font-size: 0.9rem;
+        margin-bottom: 1.7rem;
+    }
+
+    .categoriaAulaConfirmar {
+        width: 25rem;
+        min-height: 1rem;
+        border-radius: 5px;
+        padding: 5px;
+        font-size: 0.9rem;
+        margin-bottom: 1.7rem;
+    }
+
+    .nomeDescricaoCursoConfirmar {
+        width: 25rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .nomeDescricaoAulaConfirmar {
+        width: 25rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .descricaoCursoConfirmar {
+        display: flex;
+        width: 25rem;
+        min-height: 5rem;
+        max-height: 5rem;
+        font-size: 0.9rem;
+        overflow-y: scroll;
+        margin-bottom: 1rem;
+    }
+
+    .descricaoCursoConfirmar::-webkit-scrollbar {
+        display: auto;
+        width: 3px;
+    }
+
+    .descricaoCursoConfirmar::-webkit-scrollbar-thumb {
+        border-radius: 2px;
+        background-color: rgb(202, 202, 202);
+        cursor: pointer;
+    }
+
+    .descricaoAulaConfirmar {
+        display: flex;
+        width: 25rem;
+        min-height: 5rem;
+        max-height: 5rem;
+        font-size: 0.9rem;
+        overflow-y: scroll;
+        margin-bottom: 1rem;
+    }
+
+    .descricaoAulaConfirmar::-webkit-scrollbar {
+        display: auto;
+        width: 3px;
+    }
+
+    .descricaoAulaConfirmar::-webkit-scrollbar-thumb {
+        border-radius: 2px;
+        background-color: rgb(202, 202, 202);
+        cursor: pointer;
+    }
+
+    .valorCursoConfirmar {
+        width: 25rem;
+        min-height: 3rem;
+        margin-bottom: 0.6rem;
+        font-size: 0.9rem;
+    }
+
+    .alunoConfirmar {
+        width: 25rem;
+        min-height: 3rem;
+        margin-bottom: 0.6rem;
+        font-size: 0.9rem;
+    }
+
+    .botoesCursoCancelar {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-direction: row;
+        width: 25rem;
+        margin-top: 1rem;
+    }
+
+    .boxAula {
+        width: auto;
+        height: auto;
+        background-color: rgb(255, 255, 255);
+        margin: 1rem;
+        border-radius: 7px;
+        box-shadow: rgb(153, 148, 148) 1px 1px 12px;
+        padding: 1rem;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        font-family: 'Quicksand', sans-serif;
+    }
+
+    .categoriaAula {
+        text-transform: uppercase;
+        width: 15rem;
+        min-height: 1.3rem;
+        max-height: 1.3rem;
+        background-color: #38afff;
+        border-radius: 5px;
+        box-shadow: rgb(153, 148, 148) 1px 1px 12px;
+        padding: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 14px;
+        margin-top: 0.5rem;
+        margin-bottom: 1.7rem;
+        overflow-x: scroll;
+        white-space: nowrap;
+    }
+
+    .categoriaAula::-webkit-scrollbar {
+        display: auto;
+        height: 3px;
+    }
+
+    .categoriaAula::-webkit-scrollbar-thumb {
+        border-radius: 2px;
+        background-color: rgb(202, 202, 202);
+        cursor: pointer;
+    }
+
+    .descricaoAula {
+        display: flex;
+        width: 15rem;
+        min-height: 4rem;
+        max-height: 4rem;
+        font-size: 13px;
+        overflow-y: scroll;
+        margin-bottom: 1rem;
+    }
+
+    .descricaoAula::-webkit-scrollbar {
+        display: auto;
+        width: 3px;
+    }
+
+    .descricaoAula::-webkit-scrollbar-thumb {
+        border-radius: 2px;
+        background-color: rgb(202, 202, 202);
+        cursor: pointer;
+    }
+
+    .alunoAula {
+        display: flex;
+        align-items: center;
+        width: 15rem;
+        min-height: 2.8rem;
+        min-height: 2.8rem;
+        font-size: 0.7rem;
+        overflow-y: scroll;
+    }
+
+    .alunoAula::-webkit-scrollbar-thumb {
+        border-radius: 2px;
+        background-color: rgb(202, 202, 202);
+        cursor: pointer;
+    }
+
+    .alunoAula::-webkit-scrollbar {
+        display: auto;
+        width: 3px;
+    }
+
+    .botaoCriar {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        top: 93%;
+        left: 94%;
+        transform: translate(-50%, -50%);
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+        background-color: rgb(40, 163, 24);
+        width: 7%;
+        height: 6%;
+        z-index: 7;
+    }
+
+    .campoLogo {
+        display: flex;
+        align-items: center;
+        max-width: 11rem;
+        max-height: 3.5rem;
+    }
+
+    .logo {
+        width: 13rem;
+        margin: 8%;
+    }
+
+    .logoSimples {
+        position: absolute;
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+    .linha {
+        background-color: rgb(255, 255, 255);
+        width: 100%;
+        height: 0.4%;
+    }
+
+    .opcoes {
+        width: 100%;
+        height: 92.1%;
+    }
+
+    .botaoFuncionalidade{
+        width: 12rem;
+        height: 4rem;
+    }
+
+    .botaoFuncionalidadeMin {
+        position: absolute;
+        opacity: 0;
+        margin: 0;
+        width: 0;
+        height: 0;
+    }
+
+    .perfilContainer {
+        margin-right: 1rem;
+    }
+
+    .perfil {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 2.5rem;
+        height: 2.5rem;
+        background-color: rgb(201, 210, 230);
+        border-radius: 100%;
+        cursor: pointer;
+    }
+
+    .perfil:hover .infoPerfil {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .infoPerfil {
+        visibility: hidden;
+        opacity: 0;
+        position: absolute;
+        min-width: 20rem;
+        top: 5%;
+        right: 4.2%;
+        background-color: rgb(255, 255, 255);
+        border-radius: 10px 0px 10px 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+        padding: 2%;
+        z-index: 50;
+        cursor: default;
+    }
+
+    .caixaIcone {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+    }
+
+    .icone {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 2.5rem;
+        height: 2.5rem;
+        background-color: rgb(225, 226, 246);
+        border-radius: 90%;
+        border: 1px solid #000000;
+        cursor: pointer;
+    }
+
+    .icone:hover {
+        transform: scale(1.04);
+        background-color: rgb(163, 185, 227);
+    }
+
+    .dadosPerfil {
+        cursor: text;
+    }
+
+    .dadosPerfil:hover {
+        transform: scale(1.02);
+    }
+
+    .botaoEditar {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin-top: 3rem;
+        height: 1.5rem;
+
+    }
+
+    .escurecer {
+        visibility: visible;
+        opacity: 1;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 10;
+        cursor: no-drop
+    }
+
+    .linhaPerfil {
+        width: 90%;
+    }
+
+    .blocoCriar {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+        background-color: rgb(255, 255, 255);
+        width: auto;
+        height: auto;
+        padding: 2rem;
+        z-index: 19;
+    }
+
+    .descricao {
+        color: #03497B;
+        display: flex;
+        font-size: 1.3rem;
+        font-family: 'Inter', sans-serif;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 10%;
+        width: 25rem;
+    }
+
+    .formulario {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .dado {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5em;
+        border-radius: 25px;
+        padding: 0.6rem;
+        margin-bottom: 7%;
+        border: none;
+        outline: none;
+        color: rgb(54, 52, 52);
+        background-color: #cacaca;
+        transition: .4s;
+    }
+
+    .dado:hover {
+        transform: scale(1.009);
+        transition: .4s;
+        border: 1px solid black;
+        box-shadow: rgba(0, 0, 0, 2) 1px 0px 20px;
+    }
+
+    .texto {
+        border: none;
+        outline: none;
+        width: 100%;
+        color: #000000;
+        background-color: #cacaca;
+    }
+
+    .titulo {
+        font-family: 'Inter', sans-serif;
+        margin-bottom: 3%;
+    }
+
+    .botoes {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+        height: 6%;
+        margin-top: 5%;
+        gap: 2rem;
+    }
+
+    .caixaSair {
+        display: flex;
+        align-items: end;
+        width: 100%;
+        height: 100%;
+    }
+
+    .botaoSair {
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        background-color: #11A3E1;
+        border-style: none;
+        transition: 0.2s;
+        color: #ffffff;
+        font-size: 1rem;
+        cursor: pointer;
+        margin-bottom: 5%;
+    }
+
+    .botaoSair:hover {
+        color: #03497B;
+    }
+
+    .pagin {
+        width: 90%;
+        height: 90%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .loader {
+        --dim: 3rem;
+        width: var(--dim);
+        height: var(--dim);
+        position: relative;
+        animation: spin988 2s linear infinite;
+    }
+
+    .loader .circle {
+        --color: #000000;
+        --dim: 1.2rem;
+        width: var(--dim);
+        height: var(--dim);
+        background-color: var(--color);
+        border-radius: 50%;
+        position: absolute;
+    }
+
+    .loader .circle:nth-child(1) {
+        top: 0;
+        left: 0;
+    }
+
+    .loader .circle:nth-child(2) {
+        top: 0;
+        right: 0;
+    }
+
+    .loader .circle:nth-child(3) {
+        bottom: 0;
+        left: 0;
+    }
+
+    .loader .circle:nth-child(4) {
+        bottom: 0;
+        right: 0;
+    }
+
+    @keyframes spin988 {
+        0% {
+            transform: scale(1) rotate(0);
+        }
+
+        20%,
+        25% {
+            transform: scale(1.3) rotate(90deg);
+        }
+
+        45%,
+        50% {
+            transform: scale(1) rotate(180deg);
+        }
+
+        70%,
+        75% {
+            transform: scale(1.3) rotate(270deg);
+        }
+
+        95%,
+        100% {
+            transform: scale(1) rotate(360deg);
+        }
+    }
 }
-  @media (max-width: 768px) {
+
+@media (max-width: 768px) {
 
     .corpo {
         display: flex;
@@ -709,8 +768,8 @@
         height: 100vh;
         background-color: rgb(255, 255, 255);
     }
-    
-    .corpoEsquerdo{
+
+    .corpoEsquerdo {
         position: absolute;
         left: 0;
         display: flex;
@@ -725,7 +784,7 @@
         z-index: 3;
     }
 
-    .corpoEsquerdo:hover{
+    .corpoEsquerdo:hover {
         display: flex;
         align-items: center;
         flex-direction: column;
@@ -733,10 +792,10 @@
         height: 100%;
         box-shadow: rgb(0, 0, 0) 1px 1px 8px;
         z-index: 3;
-        
+
     }
 
-    .corpoEsquerdo:hover .logo{
+    .corpoEsquerdo:hover .logo {
         position: relative;
         display: flex;
         align-items: center;
@@ -747,10 +806,10 @@
         opacity: 1;
         padding: 1rem;
         margin: 0;
-        
+
     }
 
-    .corpoEsquerdo:hover .campoLogo{
+    .corpoEsquerdo:hover .campoLogo {
         position: relative;
         display: flex;
         align-items: center;
@@ -758,11 +817,11 @@
         opacity: 1;
         width: 12rem;
         height: 2rem;
-        margin:1rem 0 1rem 0 ;
-        
+        margin: 1rem 0 1rem 0;
+
     }
 
-    .corpoEsquerdo:hover .logoSimples{
+    .corpoEsquerdo:hover .logoSimples {
         position: absolute;
         width: 0rem;
         height: 0rem;
@@ -771,28 +830,28 @@
         margin: 0;
     }
 
-    .corpoEsquerdo:hover .botaoFuncionalidade{
+    .corpoEsquerdo:hover .botaoFuncionalidade {
         position: relative;
         width: 15rem;
         height: 4rem;
         opacity: 1;
     }
-    
-    .corpoEsquerdo:hover .botaoFuncionalidadeMin{
+
+    .corpoEsquerdo:hover .botaoFuncionalidadeMin {
         position: absolute;
         width: 0;
         height: 0;
         opacity: 0;
     }
 
-    .botaoFuncionalidade{
+    .botaoFuncionalidade {
         position: absolute;
         width: 0;
         height: 0;
         opacity: 0;
     }
-    
-    .botaoFuncionalidadeMin{
+
+    .botaoFuncionalidadeMin {
         position: relative;
         display: flex;
         align-items: center;
@@ -804,13 +863,13 @@
         opacity: 1;
         border-bottom: 2px solid #ffffff;
     }
-    
-    .corpoDireito{
+
+    .corpoDireito {
         width: 100%;
         height: 100%;
     }
-    
-    .blocoSuperior{
+
+    .blocoSuperior {
         display: flex;
         align-items: center;
         justify-content: flex-end;
@@ -818,31 +877,31 @@
         max-height: 4rem;
         background-color: #03497B;
     }
-    
-    .blocoInferior{
+
+    .blocoInferior {
         position: absolute;
         width: calc(100% - 5rem);
         height: calc(100% - 4.4rem);
         background-color: rgb(255, 255, 255);
         right: 0%;
-        display: flex; 
+        display: flex;
         align-items: flex-start;
         justify-content: center;
-        flex-wrap: wrap; 
-        overflow-y:scroll;
+        flex-wrap: wrap;
+        overflow-y: scroll;
     }
-    
-    .blocoInferior::-webkit-scrollbar{
+
+    .blocoInferior::-webkit-scrollbar {
         display: auto;
         width: 10px;
     }
-    
-    .blocoInferior::-webkit-scrollbar-thumb{
+
+    .blocoInferior::-webkit-scrollbar-thumb {
         border-radius: 20px;
         background-color: rgb(7, 4, 44);
     }
-    
-    
+
+
     .box1 {
         width: 10rem;
         height: 10rem;
@@ -856,57 +915,57 @@
         flex-direction: column;
         font-family: 'Quicksand', sans-serif;
     }
-    
-    .logo{
+
+    .logo {
         position: absolute;
         width: 0;
         height: 0;
         opacity: 0;
     }
 
-    .logoSimples{
+    .logoSimples {
         position: relative;
         display: flex;
         align-items: center;
         justify-content: center;
-        width:10rem;
+        width: 10rem;
         min-height: 4rem;
         max-height: 4rem;
         opacity: 1;
     }
 
-    .campoLogo{
+    .campoLogo {
         position: absolute;
         opacity: 0;
         width: 0;
     }
 
-    .caixaLogo{
+    .caixaLogo {
         position: relative;
         width: 3rem;
         opacity: 1;
-        
+
     }
 
-    
-    
-    .linha{
+
+
+    .linha {
         background-color: rgb(255, 255, 255);
         width: 100%;
         height: 0.4%;
     }
-    
+
     .opcoes {
         width: 100%;
         height: 92.1%;
     }
-    
-    
-    
-    .perfilContainer{
+
+
+
+    .perfilContainer {
         margin-right: 1rem;
     }
-    
+
     .perfil {
         display: flex;
         align-items: center;
@@ -917,12 +976,12 @@
         border-radius: 100%;
         cursor: pointer;
     }
-    
+
     .perfil:hover .infoPerfil {
         visibility: visible;
-        opacity: 1; 
+        opacity: 1;
     }
-    
+
     .infoPerfil {
         visibility: hidden;
         opacity: 0;
@@ -939,15 +998,15 @@
         cursor: default;
         z-index: 4;
     }
-    
-    .caixaIcone{
+
+    .caixaIcone {
         display: flex;
         align-items: center;
         justify-content: center;
         width: 100%;
         height: 100%;
     }
-    
+
     .icone {
         display: flex;
         align-items: center;
@@ -959,31 +1018,31 @@
         border: 1px solid #000000;
         cursor: pointer;
     }
-    
+
     .icone:hover {
         transform: scale(1.04);
         background-color: rgb(163, 185, 227);
     }
-    
-    
-    .dadosPerfil{
+
+
+    .dadosPerfil {
         cursor: text;
     }
-    
-    .dadosPerfil:hover{
+
+    .dadosPerfil:hover {
         transform: scale(1.02);
     }
-    
-    .botaoEditar{
+
+    .botaoEditar {
         display: flex;
         align-items: center;
         justify-content: center;
         width: 100%;
         margin-top: 3rem;
         height: 1.5rem;
-    
+
     }
-    
+
     .escurecer {
         visibility: visible;
         opacity: 1;
@@ -994,16 +1053,16 @@
         width: 100%;
         height: 100%;
         background-color: rgba(0, 0, 0, 0.5);
-        z-index: 5; 
-        cursor:no-drop
+        z-index: 5;
+        cursor: no-drop
     }
-    
-    .linhaPerfil{
+
+    .linhaPerfil {
         width: 90%;
     }
-    
-    
-    .boxCurso{
+
+
+    .boxCurso {
         min-width: 15rem;
         max-width: 15rem;
         height: auto;
@@ -1017,8 +1076,8 @@
         flex-direction: column;
         font-family: 'Quicksand', sans-serif;
     }
-    
-    .boxAula{
+
+    .boxAula {
         min-width: 15rem;
         max-width: 15rem;
         height: auto;
@@ -1032,8 +1091,8 @@
         flex-direction: column;
         font-family: 'Quicksand', sans-serif;
     }
-    
-    .categoriaCurso{
+
+    .categoriaCurso {
         text-transform: uppercase;
         width: 90%;
         min-height: 1rem;
@@ -1048,8 +1107,8 @@
         margin-top: 0.5rem;
         margin-bottom: 1.7rem;
     }
-    
-    .categoriaAula{
+
+    .categoriaAula {
         text-transform: uppercase;
         width: 90%;
         min-height: 1rem;
@@ -1063,36 +1122,36 @@
         font-size: 14px;
         margin-bottom: 1.7rem;
     }
-    
-    .descricaoCurso{
+
+    .descricaoCurso {
         display: flex;
         width: 95%;
         min-height: 4rem;
         max-height: 5rem;
         font-size: 13px;
-        overflow-y:scroll;
+        overflow-y: scroll;
         margin-bottom: 1rem;
     }
-    
-    .descricaoCurso::-webkit-scrollbar{
+
+    .descricaoCurso::-webkit-scrollbar {
         display: auto;
         width: 3px;
     }
-    
-    .descricaoCurso::-webkit-scrollbar-thumb{
+
+    .descricaoCurso::-webkit-scrollbar-thumb {
         border-radius: 2px;
         background-color: rgb(202, 202, 202);
         cursor: pointer;
     }
-    
-    .professorCurso{
+
+    .professorCurso {
         width: 95%;
         min-height: 3rem;
         margin-bottom: 0.6rem;
         font-size: 13px;
     }
-    
-    .valorComprar{
+
+    .valorComprar {
         width: 95%;
         min-height: 3rem;
         display: flex;
@@ -1101,8 +1160,8 @@
         justify-content: center;
         font-size: 14px;
     }
-    
-    .botaoComprar{
+
+    .botaoComprar {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -1110,13 +1169,13 @@
         width: 100%;
         margin-bottom: 0.5rem;
     }
-    
-    .valor{
+
+    .valor {
         text-align: center;
         width: 100%;
         font-size: 12px;
     }
-    
+
     .confirmarCompra {
         position: absolute;
         display: flex;
@@ -1134,17 +1193,17 @@
         padding: 1rem;
         z-index: 7
     }
-    
-    .dadosDaCompraConfirmar{
+
+    .dadosDaCompraConfirmar {
         width: 100%;
         font-family: 'Inter', sans-serif;
         font-size: 2rem;
         text-align: center;
-        margin: 0rem 1.5rem 1.5rem 1.5rem ;
+        margin: 0rem 1.5rem 1.5rem 1.5rem;
         color: #03497B;
     }
-    
-    .categoriaCursoConfirmar{
+
+    .categoriaCursoConfirmar {
         width: 90%;
         min-height: 1rem;
         border-radius: 5px;
@@ -1152,47 +1211,47 @@
         font-size: 0.9rem;
         margin-bottom: 1.7rem;
     }
-    
-    .nomeDescricaoCursoConfirmar{
+
+    .nomeDescricaoCursoConfirmar {
         width: 90%;
     }
-    
-    .descricaoCursoConfirmar{
+
+    .descricaoCursoConfirmar {
         display: flex;
         width: 90%;
         min-height: 5rem;
         max-height: 5rem;
         font-size: 0.9rem;
-        overflow-y:scroll;
+        overflow-y: scroll;
         margin-bottom: 1rem;
     }
-    
-    .descricaoCursoConfirmar::-webkit-scrollbar{
+
+    .descricaoCursoConfirmar::-webkit-scrollbar {
         display: auto;
         width: 3px;
     }
-    
-    .descricaoCursoConfirmar::-webkit-scrollbar-thumb{
+
+    .descricaoCursoConfirmar::-webkit-scrollbar-thumb {
         border-radius: 2px;
         background-color: rgb(202, 202, 202);
         cursor: pointer;
     }
-    
-    .professorCursoConfirmar{
+
+    .professorCursoConfirmar {
         width: 90%;
         min-height: 3rem;
         margin-bottom: 0.6rem;
         font-size: 0.9rem;
     }
-    
-    .valorConfirmar{
+
+    .valorConfirmar {
         text-align: center;
         width: 90%;
         font-size: 1.3rem;
         margin-bottom: 1rem;
     }
-    
-    .botoesCompra{
+
+    .botoesCompra {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -1201,18 +1260,18 @@
         width: 100%;
         margin-top: 1rem;
     }
-    
-    .caixaSair{
+
+    .caixaSair {
         display: flex;
         align-items: end;
         width: 100%;
         height: 100%;
     }
-    
-    .botaoSair{
+
+    .botaoSair {
         display: flex;
         align-items: center;
-        justify-content:left;
+        justify-content: left;
         background-color: #11A3E1;
         border-style: none;
         transition: 0.2s;
@@ -1221,34 +1280,34 @@
         cursor: pointer;
         margin-bottom: 5%;
     }
-    
-    .botaoSair:hover{
+
+    .botaoSair:hover {
         color: #03497B;
     }
-    
-    .blocoNaoCurso{
+
+    .blocoNaoCurso {
         display: flex;
         align-items: center;
         justify-content: center;
         width: 7rem;
         height: 7rem;
-        border-style:solid;
+        border-style: solid;
         border-color: #686868;
         border-radius: 90%;
         border-width: 0.5rem;
         margin-bottom: 1rem;
     }
-    
-    
-    .blocoNaoCursoTexto{
+
+
+    .blocoNaoCursoTexto {
         font-family: 'Inter', sans-serif;
         font-size: 1.5rem;
         font-weight: bold;
         color: #686868;
-        
+
     }
-    
-    .alertaNaoCurso{
+
+    .alertaNaoCurso {
         position: relative;
         display: flex;
         align-items: center;
@@ -1256,7 +1315,7 @@
         flex-direction: column;
         top: 50%;
         left: 50%;
-        transform: translate(-75%,-80%);
+        transform: translate(-75%, -80%);
         width: 20rem;
         height: 15rem;
     }
@@ -1279,7 +1338,7 @@
         padding: 1rem;
         z-index: 11
     }
-    
+
     .confirmarCancelamentoAula {
         position: absolute;
         display: flex;
@@ -1298,23 +1357,23 @@
         padding: 1rem;
         z-index: 11
     }
-    
-    .dadosDoCursoConfirmar{
+
+    .dadosDoCursoConfirmar {
         font-family: 'Inter', sans-serif;
         font-size: 2rem;
         text-align: center;
-        margin: 0rem 1.5rem 1.5rem 1.5rem ;
+        margin: 0rem 1.5rem 1.5rem 1.5rem;
         color: #03497B;
     }
-    
-    .dadosDaAulaConfirmar{
+
+    .dadosDaAulaConfirmar {
         font-family: 'Inter', sans-serif;
         font-size: 2rem;
-        margin: 0rem 1.5rem 1.5rem 1.5rem ;
+        margin: 0rem 1.5rem 1.5rem 1.5rem;
         color: #03497B;
     }
-    
-    .categoriaCursoConfirmar{
+
+    .categoriaCursoConfirmar {
         width: 95%;
         min-height: 1rem;
         border-radius: 5px;
@@ -1322,8 +1381,8 @@
         font-size: 0.9rem;
         margin-bottom: 1.7rem;
     }
-    
-    .categoriaAulaConfirmar{
+
+    .categoriaAulaConfirmar {
         width: 95%;
         min-height: 1rem;
         border-radius: 5px;
@@ -1331,74 +1390,95 @@
         font-size: 0.9rem;
         margin-bottom: 1.7rem;
     }
-    
-    .nomeDescricaoCursoConfirmar{
+
+    .nomeDescricaoCursoConfirmar {
         width: 95%;
         margin-bottom: 0.5rem;
     }
-    
-    .nomeDescricaoAulaConfirmar{
+
+    .nomeDescricaoAulaConfirmar {
         width: 95%;
         margin-bottom: 0.5rem;
     }
-    
-    .descricaoCursoConfirmar{
+
+    .descricaoCursoConfirmar {
         display: flex;
         width: 95%;
         min-height: 5rem;
         max-height: 5rem;
         font-size: 0.9rem;
-        overflow-y:scroll;
+        overflow-y: scroll;
         margin-bottom: 1rem;
     }
-    
-    .descricaoCursoConfirmar::-webkit-scrollbar{
+
+    .descricaoCursoConfirmar::-webkit-scrollbar {
         display: auto;
         width: 3px;
     }
-    
-    .descricaoCursoConfirmar::-webkit-scrollbar-thumb{
+
+    .descricaoCursoConfirmar::-webkit-scrollbar-thumb {
         border-radius: 2px;
         background-color: rgb(202, 202, 202);
         cursor: pointer;
     }
-    
-    .descricaoAulaConfirmar{
+
+    .descricaoAulaConfirmar {
         display: flex;
         width: 95%;
         min-height: 5rem;
         max-height: 5rem;
         font-size: 0.9rem;
-        overflow-y:scroll;
+        overflow-y: scroll;
         margin-bottom: 1rem;
     }
-    
-    .descricaoAulaConfirmar::-webkit-scrollbar{
+
+    .descricaoAulaConfirmar::-webkit-scrollbar {
         display: auto;
         width: 3px;
     }
-    
-    .descricaoAulaConfirmar::-webkit-scrollbar-thumb{
+
+    .descricaoAulaConfirmar::-webkit-scrollbar-thumb {
         border-radius: 2px;
         background-color: rgb(202, 202, 202);
         cursor: pointer;
     }
-    
-    .valorCursoConfirmar{
+
+    .alunoAula {
+        display: flex;
+        align-items: center;
+        width: 15rem;
+        min-height: 2.8rem;
+        min-height: 2.8rem;
+        font-size: 0.9rem;
+        overflow-y: scroll;
+    }
+
+    .alunoAula::-webkit-scrollbar-thumb {
+        border-radius: 2px;
+        background-color: rgb(202, 202, 202);
+        cursor: pointer;
+    }
+
+    .alunoAula::-webkit-scrollbar {
+        display: auto;
+        width: 3px;
+    }
+
+    .valorCursoConfirmar {
         width: 95%;
         min-height: 3rem;
         margin-bottom: 0.6rem;
         font-size: 0.9rem;
     }
-    
-    .alunoConfirmar{
+
+    .alunoConfirmar {
         width: 95%;
         min-height: 3rem;
         margin-bottom: 0.6rem;
         font-size: 0.9rem;
     }
-    
-    .botoesCursoCancelar{
+
+    .botoesCursoCancelar {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -1408,7 +1488,7 @@
         margin-top: 1rem;
     }
 
-    .botaoMais{
+    .botaoMais {
         position: absolute;
         display: flex;
         align-items: center;
@@ -1440,20 +1520,20 @@
         padding: 1rem;
         z-index: 11;
     }
-    
-    .descricao{
+
+    .descricao {
         color: #03497B;
         font-size: 1.3rem;
         font-family: 'Inter', sans-serif;
         margin-bottom: 10%;
     }
-    
+
     .formulario {
         display: flex;
         flex-direction: column;
         width: 90%;
     }
-    
+
     .dado {
         display: flex;
         align-items: center;
@@ -1468,14 +1548,14 @@
         background-color: #cacaca;
         transition: .4s;
     }
-    
+
     .dado:hover {
         transform: scale(1.009);
         transition: .4s;
         border: 1px solid black;
         box-shadow: rgba(0, 0, 0, 2) 1px 0px 20px;
     }
-    
+
     .texto {
         border: none;
         outline: none;
@@ -1483,12 +1563,12 @@
         color: #000000;
         background-color: #cacaca;
     }
-    
+
     .titulo {
         font-family: 'Inter', sans-serif;
         margin-bottom: 3%;
     }
-    
+
     .botoes {
         display: flex;
         flex-direction: row;
@@ -1496,9 +1576,89 @@
         width: 90%;
         height: 6%;
         margin-top: 5%;
-        gap:2rem;
+        gap: 2rem;
     }
-    
+
+    .descricaoAula {
+        display: flex;
+        width: 15rem;
+        min-height: 4rem;
+        max-height: 4rem;
+        font-size: 13px;
+        overflow-y: scroll;
+        margin-bottom: 1rem;
+    }
+
+    .descricaoAula::-webkit-scrollbar {
+        display: auto;
+        width: 3px;
+    }
+
+    .descricaoAula::-webkit-scrollbar-thumb {
+        border-radius: 2px;
+        background-color: rgb(202, 202, 202);
+        cursor: pointer;
+    }
+
+    .categoriaAula {
+        text-transform: uppercase;
+        width: 15rem;
+        min-height: 1.3rem;
+        max-height: 1.3rem;
+        background-color: #38afff;
+        border-radius: 5px;
+        box-shadow: rgb(153, 148, 148) 1px 1px 12px;
+        padding: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 14px;
+        margin-top: 0.5rem;
+        margin-bottom: 1.7rem;
+        overflow-x: scroll;
+        white-space: nowrap;
+    }
+
+    .categoriaAula::-webkit-scrollbar {
+        display: auto;
+        height: 3px;
+    }
+
+    .categoriaAula::-webkit-scrollbar-thumb {
+        border-radius: 2px;
+        background-color: rgb(202, 202, 202);
+        cursor: pointer;
+    }
+
+    .categoriaCurso {
+        text-transform: uppercase;
+        width: 15rem;
+        min-height: 1.3rem;
+        max-height: 1.3rem;
+        background-color: #38afff;
+        border-radius: 5px;
+        box-shadow: rgb(153, 148, 148) 1px 1px 12px;
+        padding: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 14px;
+        margin-top: 0.5rem;
+        margin-bottom: 1.7rem;
+        overflow-x: scroll;
+        white-space: nowrap;
+    }
+
+    .categoriaCurso::-webkit-scrollbar {
+        display: auto;
+        height: 3px;
+    }
+
+    .categoriaCurso::-webkit-scrollbar-thumb {
+        border-radius: 2px;
+        background-color: rgb(202, 202, 202);
+        cursor: pointer;
+    }
 
 }
 

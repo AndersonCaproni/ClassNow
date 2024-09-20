@@ -37,6 +37,12 @@ export default {
         });
     },
 
+    async ObterInfo(professorID){
+        return await HTTPClient.put(`/professor/obterInfo/${professorID}`, {
+            professorID: professorID
+        });
+    },
+
     async CancelarAula(alunoID, cursoID){
         return await HTTPClient.delete(`/professor/cancelaraula/${alunoID}/${cursoID}`, {
             alunoID: alunoID,

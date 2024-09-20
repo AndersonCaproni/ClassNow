@@ -37,7 +37,6 @@ function PaginaAluno() {
     const [confirmarID, setConfirmarID] = useState("")
     const [confirmarCategoria, setConfirmarCategoria] = useState("")
     const [confirmarProfessor, setConfirmarProfessor] = useState("")
-    const [temAula, setTemAula] = useState(false);
 
     useEffect(() => {
         const ListarCursos = async () => {
@@ -50,29 +49,48 @@ function PaginaAluno() {
         };
 
         ListarCursos();
-    }, []);
+    }, [dadosPagina]);
+
+    useEffect(() => {
+        const Obter = async () => {
+            try {
+                const resposta = await aluno.ObterInfo(estudante.alunoID);
+                setEstudante(resposta.data);
+            } catch (error) {
+                alert.handleAlert(`Ops! Tivemos o seguinte problema ao buscar pelo aluno: \n${error.response.data}\n tente novamente!`, "danger");
+            }
+        };
+
+        Obter();
+    }, [editar]);
+
 
     useEffect(() => {
         const ListarAulas = async () => {
+
             try {
                 if (estudante.alunoID) {
                     const resposta = await aluno.ListarAulas(estudante.alunoID);
+
                     setAulas(resposta.data);
-                    setTemAula(false);
                 }
             } catch (error) {
                 alert.handleAlert(`Ops! Tivemos o seguinte problema ao buscar pelas aulas: \n${error.response.data}\n tente novamente!`, "danger");
-                setTemAula(true);
             }
         };
 
         ListarAulas();
-    }, [estudante]);
+
+    }, []);
 
     const ComprarCurso = async () => {
         try {
             await aluno.AdicionarAula(estudante.alunoID, (confirmarID));
             alert.handleAlert(`Curso comprado com sucesso!`, "success");
+            const resposta = await aluno.ListarAulas(estudante.alunoID);
+            setAulas(resposta.data);
+
+
             setComprar(false);
         } catch (error) {
             alert.handleAlert(`Ops! Tivemos o seguinte problema ao comprar o curso: \n${error.response.data}\n tente novamente!`, "danger");
@@ -82,6 +100,9 @@ function PaginaAluno() {
     const CancelarCurso = async () => {
         try {
             await aluno.CancelarAula(estudante.alunoID, (confirmarID));
+            const resposta = await aluno.ListarAulas(estudante.alunoID);
+            setAulas(resposta.data);
+
             alert.handleAlert(`Curso cancelado com sucesso!`, "success");
             setCancelar(false);
         } catch (error) {
@@ -233,7 +254,7 @@ function PaginaAluno() {
                             <>
                                 {
 
-                                    temAula ?
+                                    aulas.length === 0 ?
                                         <div className={styles.alertaNaoCurso}>
                                             <div className={styles.blocoNaoCurso}>
                                                 <CloseIcon sx={{ fontSize: 100 }} color="action" />

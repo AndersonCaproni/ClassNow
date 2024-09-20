@@ -4,10 +4,10 @@ export default {
 
     async Criar(categoria,descricao,valor,professorID) {
         return await HTTPClient.post("/curso/criar", {
-            categoria: categoria,
-            descricao: descricao,
-            valor: valor,
-            professorID: professorID
+            categoria: categoria || "",
+            descricao: descricao || "",
+            valor: valor || "",
+            professorID: professorID || ""
         });
     },
 

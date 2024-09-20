@@ -140,6 +140,33 @@ public class ProfessorController : ControllerBase
         }
     }
 
+    [HttpPut]
+    [Route("obterInfo/{professorID}")]
+    public async Task<IActionResult> ObterInfo([FromRoute] int professorID)
+    {
+        try
+        {
+
+            var professorExistente = await _professorAplicacao.ObterAsync(professorID);
+
+            var professorLogado = new ProfessorLogado()
+            {
+                ProfessorID = professorExistente.ProfessorID,
+                Nome = professorExistente.Nome,
+                Email = professorExistente.Email,
+                Telefone = professorExistente.Telefone,
+                Estado = professorExistente.Estado,
+                Cidade = professorExistente.Cidade
+            };
+
+            return Ok(professorLogado);
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(ex.Message);
+        }
+    }
+
     [HttpDelete]
     [Route("cancelarAula/{alunoID}/{cursoID}")]
     public async Task<IActionResult> CancelarAula([FromRoute] int alunoID, [FromRoute] int cursoID)

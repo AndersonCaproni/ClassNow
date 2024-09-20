@@ -46,6 +46,10 @@ function PaginaProfessor() {
     const [loading, setLoading] = useState(false);
     const [temCurso, setTemCurso] = useState(false);
     const [temAula, setTemAula] = useState(false);
+    const [editou, setEditou] = useState(false);
+    const [cancelou, setCancelou] = useState(false);
+    const [criou, setCriou] = useState(false);
+    const [cancelouAula, setCancelouAula] = useState(false);
 
     const LimparVariaveis = () => {
         setValor("")
@@ -54,6 +58,7 @@ function PaginaProfessor() {
     }
 
     useEffect(() => {
+
         const ListarCursos = async () => {
             try {
                 if (prof.professorID) {
@@ -70,7 +75,22 @@ function PaginaProfessor() {
         };
 
         ListarCursos();
-    }, [prof]);
+
+    }, [cancelou, editou, criou, dadosPagina,]);
+
+    useEffect(() => {
+        const Obter = async () => {
+            try {
+                const resposta = await professor.ObterInfo(prof.professorID);
+                setProf(resposta.data);
+            } catch (error) {
+                alert.handleAlert(`Ops! Tivemos o seguinte problema ao buscar pelo professor: \n${error.response.data}\n tente novamente!`, "danger");
+            }
+        };
+
+        Obter();
+    }, [editar]);
+
 
     useEffect(() => {
         setLoading(true)
@@ -90,64 +110,87 @@ function PaginaProfessor() {
         };
 
         ListarAulas();
-    }, [prof]);
+    }, [cancelouAula, dadosPagina,]);
 
     const ConfirmarCriacaoCurso = async () => {
         try {
             await curso.Criar(categoria, descricao, valor, prof.professorID)
             alert.handleAlert(`Curso criado com sucesso!`, "success")
             setCriarCurso(false)
+            setCriou(false)
         }
         catch (error) {
             console.log(error)
-            alert.handleAlert(`Ops! Tivemos o seguinte problema ao criar o curso: \n${error.response.data ? error.response.data : "Erro ao criar o curso, verifique as informações e"}\n tente novamente!`, "danger")
+            alert.handleAlert(`Ops! Tivemos o seguinte problema ao criar o curso: Erro ao criar o curso, verifique as informações e tente novamente!`, "danger")
             setLoading(false)
         }
     }
 
     const ConfirmarEdicaoCurso = async () => {
+
         try {
-            if (trocouCategoria) {
-                if (trocouDescricao) {
-                    if (trocouValor) {
+
+            if (trocouCategoria && categoria !== "") {
+                if (trocouDescricao && descricao !== "") {
+                    if (trocouValor && valor !== "") {
                         await curso.Atualizar(IdEditarCurso, categoria, descricao, valor)
+                        alert.handleAlert(`Curso editado com sucesso!`, "success")
+                        setEditarCursos(false)
+                        setEditou(false)
                     }
                     else {
                         await curso.Atualizar(IdEditarCurso, categoria, descricao, dadosCurso.valor)
+                        alert.handleAlert(`Curso editado com sucesso!`, "success")
+                        setEditarCursos(false)
+                        setEditou(false)
                     }
                 }
                 else {
-                    if (trocouValor) {
+                    if (trocouValor && valor !== "") {
                         await curso.Atualizar(IdEditarCurso, categoria, dadosCurso.descricao, valor)
+                        alert.handleAlert(`Curso editado com sucesso!`, "success")
+                        setEditarCursos(false)
+                        setEditou(false)
                     }
                     else {
                         await curso.Atualizar(IdEditarCurso, categoria, dadosCurso.descricao, dadosCurso.valor)
+                        alert.handleAlert(`Curso editado com sucesso!`, "success")
+                        setEditarCursos(false)
+                        setEditou(false)
                     }
                 }
             }
             else {
-                if (trocouDescricao) {
-                    if (trocouValor) {
+                if (trocouDescricao && descricao !== "") {
+                    if (trocouValor && valor !== "") {
                         await curso.Atualizar(IdEditarCurso, dadosCurso.categoria, descricao, valor)
+                        alert.handleAlert(`Curso editado com sucesso!`, "success")
+                        setEditarCursos(false)
+                        setEditou(false)
                     }
                     else {
                         await curso.Atualizar(IdEditarCurso, dadosCurso.categoria, descricao, dadosCurso.valor)
+                        alert.handleAlert(`Curso editado com sucesso!`, "success")
+                        setEditarCursos(false)
+                        setEditou(false)
                     }
                 }
                 else {
-                    if (trocouValor) {
+                    if (trocouValor && valor !== "") {
                         await curso.Atualizar(IdEditarCurso, dadosCurso.categoria, dadosCurso.descricao, valor)
+                        alert.handleAlert(`Curso editado com sucesso!`, "success")
+                        setEditarCursos(false)
+                        setEditou(false)
                     }
                     else {
-                        await curso.Atualizar(IdEditarCurso, dadosCurso.categoria, dadosCurso.descricao, dadosCurso.valor)
+                        alert.handleAlert(`Voce não está alterando nenhuma informação!`, "danger")
                     }
                 }
             }
-            alert.handleAlert(`Curso editado com sucesso!`, "success")
-            setEditarCursos(false)
+
         }
         catch (error) {
-            alert.handleAlert(`Ops! Tivemos o seguinte problema ao editar o curso: \n${error.response.data}\n tente novamente!`, "danger")
+            alert.handleAlert(`Ops! Erro ao editar o curso, preencha as informações e tente novamente!`, "danger")
         }
     }
 
@@ -156,6 +199,8 @@ function PaginaProfessor() {
             await curso.Deletar(dadosCurso.cursoID)
             alert.handleAlert(`Curso cancelado com sucesso!`, "success")
             setCancelarCurso(false)
+            setCancelou(false)
+            setCancelouAula(false);
         }
         catch (error) {
             alert.handleAlert(`Ops! Tivemos o seguinte problema ao cancelar o curso: \n${error.response.data}\n tente novamente!`, "danger")
@@ -167,6 +212,7 @@ function PaginaProfessor() {
             await professor.CancelarAula(dadosAulas.alunoID, dadosAulas.cursoID)
             alert.handleAlert(`Aula cancelada com sucesso!`, "success")
             setCancelarAula(false)
+            setCancelouAula(false)
         }
         catch (error) {
             alert.handleAlert(`Ops! Tivemos o seguinte problema ao cancelar a aula: \n${error.response.data}\n tente novamente!`, "danger")
@@ -215,7 +261,7 @@ function PaginaProfessor() {
                                 </div>
                             </form>
                             <div className={styles.botoes}>
-                                <Botao onClick={ConfirmarCriacaoCurso} tipo='comprar'>Confirmar</Botao>
+                                <Botao onClick={() => { setCriou(true); ConfirmarCriacaoCurso() }} tipo='comprar'>Confirmar</Botao>
                                 <Botao onClick={() => { setCriarCurso(false) }} tipo='comprar'>Cancelar</Botao>
                             </div>
                         </div>
@@ -245,7 +291,7 @@ function PaginaProfessor() {
                                 </div>
                             </form>
                             <div className={styles.botoes}>
-                                <Botao onClick={ConfirmarEdicaoCurso} tipo='comprar'>Confirmar</Botao>
+                                <Botao onClick={() => { setEditou(true); ConfirmarEdicaoCurso() }} tipo='comprar'>Confirmar</Botao>
                                 <Botao onClick={() => { setEditarCursos(false) }} tipo='comprar'>Cancelar</Botao>
                             </div>
                         </div>
@@ -263,7 +309,7 @@ function PaginaProfessor() {
                             <div className={styles.descricaoCursoConfirmar}>{dadosCurso.descricao}</div>
                             <div className={styles.valorCursoConfirmar}><p><b>Valor:  R$</b> {dadosCurso.valor} </p></div>
                             <div className={styles.botoesCursoCancelar}>
-                                <Botao onClick={CancelarCurso} tipo='excluir'>Cancelar Curso</Botao>
+                                <Botao onClick={() => { setCancelouAula(true); setCancelou(true); CancelarCurso() }} tipo='excluir'>Cancelar Curso</Botao>
                                 <Botao onClick={() => { setCancelarCurso(false) }} tipo='excluir'>Voltar</Botao>
                             </div>
                         </div>
@@ -283,7 +329,7 @@ function PaginaProfessor() {
                             <div className={styles.alunoConfirmar}><p><b>E-Mail: </b> {dadosAulas.email} </p></div>
                             <div className={styles.alunoConfirmar}><p><b>Telefone: </b> {dadosAulas.telefone} </p></div>
                             <div className={styles.botoesCursoCancelar}>
-                                <Botao onClick={CancelarAula} tipo='excluir'>Cancelar Aula</Botao>
+                                <Botao onClick={() => { setCancelouAula(true); CancelarAula() }} tipo='excluir'>Cancelar Aula</Botao>
                                 <Botao onClick={() => { setCancelarAula(false) }} tipo='excluir'>Voltar</Botao>
                             </div>
                         </div>
@@ -400,7 +446,7 @@ function PaginaProfessor() {
                                 :
                                 <>
                                     {
-                                        temCurso ?
+                                        aulas.length === 0 ?
                                             <div className={styles.alertaNaoCurso}>
                                                 <div className={styles.blocoNaoCurso}>
                                                     <CloseIcon sx={{ fontSize: 100 }} color="action" />

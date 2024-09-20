@@ -33,6 +33,12 @@ export default{
         });
     },
 
+    async ObterInfo(id){
+        return await HTTPClient.put(`/aluno/obterInfo/${id}`, {
+            id: id
+        });
+    },
+
     async AdicionarAula(alunoID, cursoID){
         return await HTTPClient.post(`/aluno/adicionaraula/${alunoID}/${cursoID}`, {
             alunoID: alunoID,

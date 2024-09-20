@@ -17,8 +17,8 @@ function EditarAluno({ children, dados, enviarEstado }) {
 
     const AlterarAluno = async () => {
         try {
-            if (trocouNome) {
-                if (trocouTelefone) {
+            if (trocouNome && nome !== "") {
+                if (trocouTelefone && telefone !== "") {
                     await aluno.Atualizar(dados.alunoID, nome, telefone)
                     alert.handleAlert(`Aluno atualizado com sucesso!`, "success")
                     enviarEstado(false)
@@ -30,7 +30,7 @@ function EditarAluno({ children, dados, enviarEstado }) {
                 }
             }
             else {
-                if (trocouTelefone) {
+                if (trocouTelefone && telefone !== "") {
                     await aluno.Atualizar(dados.alunoID, dados.nome, telefone)
                     alert.handleAlert(`Aluno atualizado com sucesso!`, "success")
                     enviarEstado(false)

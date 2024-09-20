@@ -23,7 +23,7 @@ builder.Services.AddDbContext<ClassNowContexto>(options => options.UseSqlServer(
 builder.Services.AddCors(options =>
     {
         options.AddPolicy("AllowSpecificOrigin",
-            builder => builder.WithOrigins("http://192.168.0.217:3000")  // Troque para o seu domínio ou "*" para permitir de qualquer origem
+            builder => builder.WithOrigins("http://192.168.1.9:3000")  // Troque para o seu domínio ou "*" para permitir de qualquer origem
                               .AllowAnyMethod()
                               .AllowAnyHeader());
     });

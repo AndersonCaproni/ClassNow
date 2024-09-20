@@ -98,9 +98,6 @@ public class AlunoAplicacao : IAlunoAplicacao
     {
         var lista = await _alunoRepositorio.ListarAulasAsync(alunoID);
 
-        if (lista == null || lista.Count() == 0)
-            throw new Exception("Nenhuma aula encontrada em nosso sistema!");
-
         return lista;
     }
 
