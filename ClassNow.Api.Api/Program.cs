@@ -23,19 +23,16 @@ builder.Services.AddDbContext<ClassNowContexto>(options => options.UseSqlServer(
 builder.Services.AddCors(options =>
     {
         options.AddPolicy("AllowSpecificOrigin",
-            builder => builder.WithOrigins("http://192.168.1.9:3000")  // Troque para o seu domínio ou "*" para permitir de qualquer origem
+            builder => builder.WithOrigins("http://192.168.0.217:3000")  
                               .AllowAnyMethod()
                               .AllowAnyHeader());
     });
 
-// Add services to the container.
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseCors("AllowSpecificOrigin");
